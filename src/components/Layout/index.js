@@ -18,7 +18,7 @@ const Layout = ({ children }) => {
       <SkipNavLink />
       <Header />
       <SkipNavContent>{children}</SkipNavContent>
-      {/* <Footer /> */}
+      <Footer />
     </ChakraProvider>
   );
 };

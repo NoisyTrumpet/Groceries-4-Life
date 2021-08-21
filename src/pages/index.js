@@ -4,21 +4,25 @@ import { graphql } from "gatsby";
 import Layout from "Components/Layout";
 // Components
 import Hero from "Components/Hero";
+import Benefits from "Components/Benefit";
+import TextBlock from "Components/TextBlock";
 
 const IndexPage = ({ data: page }) => {
   const { hero, beneficiaries, beneficiariesTitle, textBlock } =
     page.graphCmsPage;
-
-  console.log(page.graphCmsPage);
 
   return (
     <Layout>
       {/* Hero */}
       <Hero data={hero} />
       {/* Benefits */}
-      <pre>{JSON.stringify(beneficiaries, null, 4)}</pre>
+      <Benefits title={beneficiariesTitle} items={beneficiaries} />
       {/* TextBlock */}
-      <pre>{JSON.stringify(textBlock, null, 4)}</pre>
+      <TextBlock
+        title={textBlock.title}
+        content={textBlock.text}
+        image={textBlock.image}
+      />
     </Layout>
   );
 };
