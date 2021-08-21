@@ -4,7 +4,7 @@
   </a>
 </p>
 <h1 align="center">
-  Gatsby minimal starter
+  Groceries 4 Life Repository
 </h1>
 
 ## 🚀 Quick start

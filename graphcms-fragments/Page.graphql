@@ -1,0 +1,61 @@
+fragment Page on Page {
+  stage
+  locale
+  remoteId: id
+  createdAt(variation: COMBINED)
+  updatedAt(variation: COMBINED)
+  publishedAt(variation: COMBINED)
+  title
+  slug
+  navigationLabel
+  beneficiariesTitle
+  createdBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  updatedBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  publishedBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  beneficiaries {
+    ... on Beneficiary {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  textBlock {
+    ... on TextBlock {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  seo {
+    ... on Seo {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  hero {
+    ... on Hero {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+}
