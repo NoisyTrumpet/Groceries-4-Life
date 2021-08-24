@@ -11,7 +11,7 @@ import * as React from "react";
 
 const Benefits = ({ title, items }) => {
   return (
-    <Box textAlign="center" py="20" mt={20}>
+    <Box textAlign="center" pt="20" pb="10">
       <Container>
         {title && (
           <Heading as="h2" color="black" maxW={800} mx={`auto`}>
@@ -23,6 +23,7 @@ const Benefits = ({ title, items }) => {
           flexWrap="wrap"
           alignItems={`center`}
           justifyContent={`center`}
+          pl={{ base: 0, md: 8 }}
         >
           {items &&
             items.map((item) => (
@@ -32,31 +33,28 @@ const Benefits = ({ title, items }) => {
                 maxWidth={`fit-content`}
                 flex={{ base: `200px`, lg: `1` }}
                 maxHeight={200}
-                maxWidth={250}
-                px={
-                  (item.name === `SAMA` && 0) ||
-                  (item.name === `The Public Theater of San Antonio` && `16`) ||
-                  (item.name === `San Antonio Chamber Choir` && `6`) ||
-                  (item.name === `Ballet San Antonio` && 0) ||
-                  (item.name === `Youth Orchestras of San Antonio` && `10`)
-                }
-                sx={{
-                  img: {
-                    width: `100%`,
-                    height: `auto`,
-                    // px:
-                    //   (item.name === `SAMA` && 0) ||
-                    //   (item.name === `The Public Theater of San Antonio` && `4`) ||
-                    //   (item.name === `San Antonio Chamber Choir` && `4`) ||
-                    //   (item.name === `Ballet San Antonio` && 0) ||
-                    //   (item.name === `Youth Orchestras of San Antonio` && `4`),
-                  },
+                maxWidth={{ base: 150, md: 250 }}
+                px={{
+                  base:
+                    (item.name === `SAMA` && 0) ||
+                    (item.name === `The Public Theater of San Antonio` &&
+                      `9`) ||
+                    (item.name === `San Antonio Chamber Choir` && `6`) ||
+                    (item.name === `Ballet San Antonio` && 0) ||
+                    (item.name === `Youth Orchestras of San Antonio` && `10`),
+                  md:
+                    (item.name === `SAMA` && 0) ||
+                    (item.name === `The Public Theater of San Antonio` &&
+                      `16`) ||
+                    (item.name === `San Antonio Chamber Choir` && `6`) ||
+                    (item.name === `Ballet San Antonio` && 0) ||
+                    (item.name === `Youth Orchestras of San Antonio` && `10`),
                 }}
               >
                 <GatsbyImage
                   image={item.logo.gatsbyImageData}
                   alt={item.name}
-                  style={{ width: `fit-content` }}
+                  style={{ width: `100%`, height: `auto` }}
                 />
               </Box>
             ))}

@@ -34,6 +34,7 @@ const Hero = ({ data }) => {
               left={{ base: "-8", lg: "-16" }}
               bottom={{ base: "-8", md: "-8" }}
               overflow="visible"
+              display={{ base: `none`, lg: `block` }}
               width={{ base: 400, md: 540, lg: 480, xl: 580 }}
               mt={{ base: -8, lg: 0 }}
             >
@@ -70,6 +71,7 @@ const Hero = ({ data }) => {
             templateRows={{ base: "repeat(2, auto)", lg: "repeat(1, auto)" }}
             justifyContent={`space-evenly`}
             px={4}
+            pb={8}
           >
             {/* Map thorugh prizes */}
             {prizes.map((prize, i) => (
@@ -122,7 +124,8 @@ const Hero = ({ data }) => {
         </GridItem>
       </Grid>
       <Box
-        py={4}
+        pb={0}
+        pt={4}
         bg="secondary"
         textAlign="center"
         position="relative"
@@ -130,7 +133,7 @@ const Hero = ({ data }) => {
         _before={{
           background: "inherit",
           content: `""`,
-          top: { base: -14, md: -20 },
+          top: { base: -3, md: -20 },
           display: "block",
           height: "100%",
           left: 0,
@@ -167,7 +170,7 @@ const Hero = ({ data }) => {
           zIndex={4}
           color="primary"
           // style={{ p: { zIndex: 999 } }}
-          fontSize={{ base: "4xl", md: "4xl", lg: "6xl" }}
+          fontSize={{ base: "4xl", lg: "6xl" }}
           fontWeight="bold"
           display={`flex`}
           flexDirection={{ base: `column`, md: `row` }}
@@ -183,7 +186,7 @@ const Hero = ({ data }) => {
         >
           <Text>
             1{" "}
-            <Box as="span" color={`#fff`} fontSize="5xl">
+            <Box as="span" color={`#fff`} fontSize={{ base: "3xl", lg: "5xl" }}>
               for
             </Box>{" "}
             $25
@@ -191,7 +194,7 @@ const Hero = ({ data }) => {
           <Text className="disDot">•</Text>
           <Text>
             3{" "}
-            <Box as="span" color={`#fff`} fontSize="5xl">
+            <Box as="span" color={`#fff`} fontSize={{ base: "3xl", lg: "5xl" }}>
               for
             </Box>{" "}
             $50
@@ -199,7 +202,7 @@ const Hero = ({ data }) => {
           <Text className="disDot">•</Text>
           <Text>
             10{" "}
-            <Box as="span" color={`#fff`} fontSize="5xl">
+            <Box as="span" color={`#fff`} fontSize={{ base: "3xl", lg: "5xl" }}>
               for
             </Box>{" "}
             $100
@@ -222,10 +225,10 @@ const Hero = ({ data }) => {
             variant="primary"
             textTransform="uppercase"
             zIndex={4}
-            // mt={8}
-            px={8}
+            fontSize={{ base: "xl", lg: "3xl" }}
+            px={10}
             position="relative"
-            bottom={{ base: "-10", md: "-14", xl: "-20" }}
+            bottom={{ base: "-10", xl: "-14" }}
           >
             {ctaText}
           </Button>

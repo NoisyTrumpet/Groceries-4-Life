@@ -33,7 +33,7 @@ const Header = () => {
               <GatsbyImage
                 image={image}
                 alt={title}
-                style={{ width: `70%`, height: `auto` }}
+                style={{ width: `55%`, height: `auto` }}
               />
             )}
           </Box>
@@ -45,7 +45,8 @@ const Header = () => {
               href={buttonLink}
               variant="primary"
               textTransform="uppercase"
-              px={8}
+              px={10}
+              fontSize={{ base: "xl", lg: "3xl" }}
             >
               {buttonText}
             </Button>
