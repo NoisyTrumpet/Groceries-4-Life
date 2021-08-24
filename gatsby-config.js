@@ -4,8 +4,12 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
-    title: "Groceries 4 Life",
+    siteUrl: "https://google.com",
+    title: "Home",
+    titleTemplate: "%s | Groceries 4 Life",
+    description: "description here",
+    url: "https://google.com", // No trailing slash allowed!
+    image: "src/images/Raffle.png", // Path to your image you placed in the 'static' folder
   },
   plugins: [
     "gatsby-plugin-sass",
@@ -46,7 +50,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "src/images/icon.png",
+        icon: "src/images/Raffle.png",
       },
     },
     "gatsby-plugin-sharp",

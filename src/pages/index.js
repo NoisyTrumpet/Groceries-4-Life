@@ -6,13 +6,16 @@ import Layout from "Components/Layout";
 import Hero from "Components/Hero";
 import Benefits from "Components/Benefit";
 import TextBlock from "Components/TextBlock";
+import Seo from "Components/Seo";
 
 const IndexPage = ({ data: page }) => {
-  const { hero, beneficiaries, beneficiariesTitle, textBlock } =
+  const { hero, beneficiaries, beneficiariesTitle, textBlock, seoMeta } =
     page.graphCmsPage;
+  const { seoTitle, seoDescription } = seoMeta;
 
   return (
     <Layout>
+      <Seo title={seoTitle} description={seoDescription} />
       {/* Hero */}
       <Hero data={hero} />
       {/* Benefits */}
@@ -31,7 +34,13 @@ export default IndexPage;
 
 export const query = graphql`
   {
-    graphCmsPage(slug: { eq: "home" }) {
+    graphCmsPage {
+      slug
+      title
+      seoMeta {
+        seoDescription
+        seoTitle
+      }
       hero {
         ... on GraphCMS_Hero {
           id
