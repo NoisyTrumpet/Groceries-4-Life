@@ -6,22 +6,25 @@ const TextBlock = ({ title, content, image }) => {
   return (
     <Box bg="primary" color="white" py="8">
       {title && (
-        <Heading as="h2" textAlign="center">
+        <Heading as="h2" textAlign="center" mb={8}>
           {title}
         </Heading>
       )}
       <Container>
-        <Grid templateColumns={["50% 50%"]}>
+        <Grid
+          templateColumns={{ base: "100%", md: "50% 50%" }}
+          templateRows={{ base: "auto auto", md: "auto" }}
+        >
           <GridItem
-            borderRightWidth="3px"
-            borderRightColor="white"
-            borderRightStyle="solid"
+            borderRight={{ base: `none`, md: "3px solid white" }}
+            borderBottom={{ base: "3px solid white", md: `none` }}
+            p={8}
           >
             {content && (
               <Box dangerouslySetInnerHTML={{ __html: content.html }} />
             )}
           </GridItem>
-          <GridItem p={4}>
+          <GridItem py={8} px={20}>
             {image && <GatsbyImage image={image.gatsbyImageData} alt={title} />}
           </GridItem>
         </Grid>

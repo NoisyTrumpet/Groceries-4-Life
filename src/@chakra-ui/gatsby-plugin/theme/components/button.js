@@ -1,15 +1,18 @@
 const Button = {
   baseStyle: {
     color: "primary",
-    borderTopRightRadius: "22",
-    borderTopLeftRadius: "22",
-    borderBottomRightRadius: "22",
-    borderBottomLeftRadius: "22",
+    borderRadius: "14",
+    // borderTopLeftRadius: "22",
+    // borderBottomRightRadius: "22",
+    // borderBottomLeftRadius: "22",
     transition: "all 0.2s ease-in-out",
     fontFamily: `var(--chakra-fonts-heading)`,
-    // _hover: {
-    //   borderTopRightRadius: "22",
-    // },
+    px: 8,
+    py: 6,
+    _hover: {
+      px: 12,
+      py: 6,
+    },
   },
   variants: {
     primary: {

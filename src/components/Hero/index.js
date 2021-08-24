@@ -15,49 +15,100 @@ const Hero = ({ data }) => {
   console.log(data);
   return (
     <Box id={id} bg="gradient">
-      <Grid templateColumns={["33% 66%"]} pos="relative">
-        <GridItem position="relative" overflowY="hidden">
+      <Grid
+        templateColumns={{ base: "100%", lg: "30% 70%" }}
+        templateRows={{ base: "auto auto", lg: "auto" }}
+        pos="relative"
+        maxW={1500}
+        mx={`auto`}
+      >
+        <GridItem
+          position="relative"
+          overflowY="visible"
+          zIndex={6}
+          rowStart={{ base: 2, lg: 1 }}
+        >
           {image && (
-            <Box pos="absolute" left="-20" top="-4">
-              <GatsbyImage image={image.gatsbyImageData} alt={title} />
+            <Box
+              pos={{ base: "relative", lg: "absolute" }}
+              left={{ base: "-8", lg: "-16" }}
+              bottom={{ base: "-8", md: "-8", "2xl": "-22%" }}
+              overflow="visible"
+              width={{ base: 400, md: 540, lg: 480 }}
+              mt={{ base: -8, lg: 0 }}
+            >
+              <GatsbyImage
+                image={image.gatsbyImageData}
+                alt={title}
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  paddingTop: { base: "3rem", md: "0" },
+                }}
+              />
             </Box>
           )}
         </GridItem>
-        <GridItem>
+        <GridItem py={4} zIndex={10} rowStart={{ base: 1, lg: 1 }}>
           {title && (
             <Text
               color="white"
               fontWeight="900"
               textAlign="center"
-              fontSize="4xl"
+              fontSize={{ base: "3xl", md: "5xl" }}
+              lineHeight={1.1}
               py={8}
+              px={4}
+              width={{ base: `100%`, md: `80%`, "2xl": `100%` }}
+              mx={`auto`}
             >
               {title}
             </Text>
           )}
-          <Grid templateColumns={["repeat(2, 1fr)", "repeat(4, 1fr)"]}>
+          <Grid
+            templateColumns={{ base: "repeat(2, auto)", lg: "repeat(4, 1fr)" }}
+            templateRows={{ base: "repeat(2, auto)", lg: "repeat(1, auto)" }}
+            justifyContent={`space-evenly`}
+            px={4}
+          >
             {/* Map thorugh prizes */}
             {prizes.map((prize, i) => (
-              <GridItem key={i} textAlign="center" zIndex={9}>
+              <GridItem
+                key={i}
+                textAlign="center"
+                width={{ base: `200px`, md: `280px`, lg: "fit-content" }}
+              >
                 <Box
                   borderBottomColor="primary"
                   borderBottomWidth="3px"
                   borderBottomStyle="solid"
-                  maxW="150"
+                  maxW={{ base: "60%", "2xl": "50%" }}
                   mx="auto"
                   pb={2}
                 >
                   <Text
                     color="white"
                     fontWeight="bold"
-                    fontSize="2xl"
+                    fontSize="xl"
                     textTransform="uppercase"
-                    lineHeight="30px"
+                    lineHeight="25px"
                   >
                     {prize.level}
                   </Text>
                 </Box>
-                <Box>
+                <Box
+                  px={{ base: 4, lg: 0 }}
+                  my={{ base: 4, lg: 8 }}
+                  // width={{ base: `60%`, lg: `100%` }}
+                  mx={`auto`}
+                  // maxHeight={150}
+                  sx={{
+                    img: {
+                      width: { base: `auto`, md: `100%` },
+                      height: { base: `100px`, md: `auto` },
+                    },
+                  }}
+                >
                   {prize.prizeImage && (
                     <GatsbyImage
                       image={prize.prizeImage.gatsbyImageData}
@@ -75,17 +126,17 @@ const Hero = ({ data }) => {
         bg="secondary"
         textAlign="center"
         position="relative"
-        zIndex={4}
+        zIndex={8}
         _before={{
           background: "inherit",
           content: `""`,
-          top: -4,
+          top: { base: -14, md: -20 },
           display: "block",
           height: "100%",
           left: 0,
           right: 0,
           position: "absolute",
-          transform: "skewY(-1.5deg)",
+          transform: { base: "skewY(-4.5deg)", md: "skewY(-1.5deg)" },
           transformOrigin: "0 100%",
           zIndex: -1,
           borderTopWidth: "9px",
@@ -101,7 +152,7 @@ const Hero = ({ data }) => {
           left: 0,
           right: 0,
           position: "absolute",
-          transform: "skewY(2.5deg)",
+          transform: { base: "skewY(5.5deg)", md: "skewY(2.5deg)" },
           transformOrigin: "0%",
           zIndex: -1,
           borderBottomWidth: "9px",
@@ -110,7 +161,51 @@ const Hero = ({ data }) => {
         }}
       >
         {/* This can probably just be custom text no need to use this below */}
-        {subtitle && (
+        {/* 1 for $25 • 3 for $50 • 10 for $100 */}
+        <Box
+          // dangerouslySetInnerHTML={{ __html: subtitle.html }}
+          zIndex={4}
+          color="primary"
+          // style={{ p: { zIndex: 999 } }}
+          fontSize={{ base: "4xl", md: "4xl", lg: "6xl" }}
+          fontWeight="bold"
+          display={`flex`}
+          flexDirection={{ base: `column`, md: `row` }}
+          justifyContent={`center`}
+          alignItems={`center`}
+          px={4}
+          sx={{
+            ".disDot": {
+              display: { base: `none`, md: `block` },
+              mx: 4,
+            },
+          }}
+        >
+          <Text>
+            1{" "}
+            <Box as="span" color={`#fff`} fontSize="5xl">
+              for
+            </Box>{" "}
+            $25
+          </Text>
+          <Text className="disDot">•</Text>
+          <Text>
+            3{" "}
+            <Box as="span" color={`#fff`} fontSize="5xl">
+              for
+            </Box>{" "}
+            $50
+          </Text>
+          <Text className="disDot">•</Text>
+          <Text>
+            10{" "}
+            <Box as="span" color={`#fff`} fontSize="5xl">
+              for
+            </Box>{" "}
+            $100
+          </Text>
+        </Box>
+        {/* {subtitle && (
           <Box
             dangerouslySetInnerHTML={{ __html: subtitle.html }}
             zIndex={4}
@@ -119,7 +214,7 @@ const Hero = ({ data }) => {
             fontSize="6xl"
             fontWeight="bold"
           />
-        )}
+        )} */}
         {ctaLink && ctaText && (
           <Button
             as="a"
@@ -127,7 +222,10 @@ const Hero = ({ data }) => {
             variant="primary"
             textTransform="uppercase"
             zIndex={4}
-            mt={8}
+            // mt={8}
+            px={8}
+            position="relative"
+            bottom={{ base: "-10", md: "-14", "2xl": "-20" }}
           >
             {ctaText}
           </Button>
