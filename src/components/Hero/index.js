@@ -32,9 +32,9 @@ const Hero = ({ data }) => {
             <Box
               pos={{ base: "relative", lg: "absolute" }}
               left={{ base: "-8", lg: "-16" }}
-              bottom={{ base: "-8", md: "-8", "2xl": "-22%" }}
+              bottom={{ base: "-8", md: "-8" }}
               overflow="visible"
-              width={{ base: 400, md: 540, lg: 480 }}
+              width={{ base: 400, md: 540, lg: 480, xl: 580 }}
               mt={{ base: -8, lg: 0 }}
             >
               <GatsbyImage
@@ -59,7 +59,7 @@ const Hero = ({ data }) => {
               lineHeight={1.1}
               py={8}
               px={4}
-              width={{ base: `100%`, md: `80%`, "2xl": `100%` }}
+              width={{ base: `100%`, md: `80%`, xl: `100%` }}
               mx={`auto`}
             >
               {title}
@@ -82,7 +82,7 @@ const Hero = ({ data }) => {
                   borderBottomColor="primary"
                   borderBottomWidth="3px"
                   borderBottomStyle="solid"
-                  maxW={{ base: "60%", "2xl": "50%" }}
+                  maxW={{ base: "60%", xl: "50%" }}
                   mx="auto"
                   pb={2}
                 >
@@ -225,7 +225,7 @@ const Hero = ({ data }) => {
             // mt={8}
             px={8}
             position="relative"
-            bottom={{ base: "-10", md: "-14", "2xl": "-20" }}
+            bottom={{ base: "-10", md: "-14", xl: "-20" }}
           >
             {ctaText}
           </Button>

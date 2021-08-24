@@ -21,7 +21,10 @@ const TextBlock = ({ title, content, image }) => {
             p={8}
           >
             {content && (
-              <Box dangerouslySetInnerHTML={{ __html: content.html }} />
+              <Box
+                dangerouslySetInnerHTML={{ __html: content.html }}
+                sx={{ h6: { marginTop: 4 } }}
+              />
             )}
           </GridItem>
           <GridItem py={8} px={20}>

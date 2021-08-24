@@ -28,13 +28,15 @@ const Header = () => {
       <Grid templateColumns={["100%", "33% 33% 33%"]} py={8}>
         <GridItem display={{ base: `none`, md: `block` }}></GridItem>
         <GridItem align={`center`} pb={{ base: 8, md: 0 }}>
-          {image && title && (
-            <GatsbyImage
-              image={image}
-              alt={title}
-              style={{ width: `70%`, height: `auto` }}
-            />
-          )}
+          <Box as="a" href="/">
+            {image && title && (
+              <GatsbyImage
+                image={image}
+                alt={title}
+                style={{ width: `70%`, height: `auto` }}
+              />
+            )}
+          </Box>
         </GridItem>
         <GridItem d="grid" placeItems="center">
           {buttonText && buttonLink && (
@@ -50,14 +52,22 @@ const Header = () => {
           )}
         </GridItem>
       </Grid>
-      <Box textAlign="center" py={6} bgColor="darkBG" color="textColor" px={2}>
+      <Box
+        textAlign="center"
+        py={6}
+        bgColor="darkBG"
+        color="textColor"
+        px={2}
+        textTransform="capitalize"
+        fontWeight={800}
+      >
         {title && (
-          <Heading as="h1" fontSize={{ base: `3xl`, md: `5xl` }}>
+          <Heading as="h1" fontSize={{ base: `xl`, md: `3xl` }}>
             {title}
           </Heading>
         )}
         {subtitle && (
-          <Text fontSize={{ base: `lg`, md: `2xl` }}>{subtitle}</Text>
+          <Text fontSize={{ base: `3xl`, md: `5xl` }}>{subtitle}</Text>
         )}
       </Box>
     </Box>

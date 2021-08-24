@@ -14,7 +14,7 @@ const Benefits = ({ title, items }) => {
     <Box textAlign="center" py="20" mt={20}>
       <Container>
         {title && (
-          <Heading as="h2" color="black">
+          <Heading as="h2" color="black" maxW={800} mx={`auto`}>
             {title}
           </Heading>
         )}
