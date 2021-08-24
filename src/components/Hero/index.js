@@ -170,7 +170,7 @@ const Hero = ({ data }) => {
           zIndex={4}
           color="primary"
           // style={{ p: { zIndex: 999 } }}
-          fontSize={{ base: "4xl", lg: "6xl" }}
+          fontSize={{ base: "3xl", lg: "5xl" }}
           fontWeight="bold"
           display={`flex`}
           flexDirection={{ base: `column`, md: `row` }}
@@ -186,24 +186,24 @@ const Hero = ({ data }) => {
         >
           <Text>
             1{" "}
-            <Box as="span" color={`#fff`} fontSize={{ base: "3xl", lg: "5xl" }}>
-              for
+            <Box as="span" color={`#fff`} fontSize={{ base: "2xl", lg: "4xl" }}>
+              Raffle Ticket for
             </Box>{" "}
             $25
           </Text>
           <Text className="disDot">•</Text>
           <Text>
             3{" "}
-            <Box as="span" color={`#fff`} fontSize={{ base: "3xl", lg: "5xl" }}>
-              for
+            <Box as="span" color={`#fff`} fontSize={{ base: "2xl", lg: "4xl" }}>
+              Raffle Tickets for
             </Box>{" "}
             $50
           </Text>
           <Text className="disDot">•</Text>
           <Text>
             10{" "}
-            <Box as="span" color={`#fff`} fontSize={{ base: "3xl", lg: "5xl" }}>
-              for
+            <Box as="span" color={`#fff`} fontSize={{ base: "2xl", lg: "4xl" }}>
+              Raffle Tickets for
             </Box>{" "}
             $100
           </Text>

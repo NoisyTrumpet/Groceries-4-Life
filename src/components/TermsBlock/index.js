@@ -14,7 +14,10 @@ const TermsBlock = ({ content }) => {
           <Container py="8">
             <Box
               dangerouslySetInnerHTML={{ __html: item.text.html }}
-              sx={{ h6: { marginTop: 4 } }}
+              sx={{
+                h6: { marginTop: 4 },
+                p: { marginBottom: 4, color: "black" },
+              }}
             />
           </Container>
         </Box>

@@ -58,7 +58,7 @@ const Header = () => {
         py={6}
         bgColor="darkBG"
         color="textColor"
-        px={2}
+        px={4}
         textTransform="capitalize"
         fontWeight={800}
       >
