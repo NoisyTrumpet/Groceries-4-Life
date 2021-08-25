@@ -1,4 +1,4 @@
-import { Box, Grid, GridItem, Text, Button } from "@chakra-ui/react";
+import { Box, Grid, GridItem, Text, Button, Flex } from "@chakra-ui/react";
 import { GatsbyImage } from "gatsby-plugin-image";
 import * as React from "react";
 
@@ -68,10 +68,15 @@ const Hero = ({ data }) => {
           )}
           <Grid
             templateColumns={{ base: "repeat(2, auto)", lg: "repeat(4, 1fr)" }}
-            templateRows={{ base: "repeat(2, auto)", lg: "repeat(1, auto)" }}
+            templateRows={{
+              base: "repeat(2, minmax(150px, 200px))",
+              md: "repeat(2, minmax(150px, 250px))",
+              lg: "repeat(1, auto)",
+            }}
+            gridGap={`20px 0`}
             justifyContent={`space-evenly`}
             px={4}
-            pb={8}
+            // pb={8}
           >
             {/* Map thorugh prizes */}
             {prizes.map((prize, i) => (
@@ -80,44 +85,80 @@ const Hero = ({ data }) => {
                 textAlign="center"
                 width={{ base: `200px`, md: `280px`, lg: "fit-content" }}
               >
-                <Box
-                  borderBottomColor="primary"
-                  borderBottomWidth="3px"
-                  borderBottomStyle="solid"
-                  maxW={{ base: "60%", xl: "50%" }}
-                  mx="auto"
-                  pb={2}
+                <Flex
+                  flexDirection={`column`}
+                  height={`100%`}
+                  justifyContent={`space-between`}
                 >
-                  <Text
-                    color="white"
-                    fontWeight="bold"
-                    fontSize="xl"
-                    textTransform="uppercase"
-                    lineHeight="25px"
+                  <Box
+                    borderBottomColor="primary"
+                    borderBottomWidth="3px"
+                    borderBottomStyle="solid"
+                    maxW={{ base: "60%", xl: "50%" }}
+                    mx="auto"
+                    pb={2}
                   >
-                    {prize.level}
-                  </Text>
-                </Box>
-                <Box
-                  px={{ base: 4, lg: 0 }}
-                  my={{ base: 4, lg: 8 }}
-                  // width={{ base: `60%`, lg: `100%` }}
-                  mx={`auto`}
-                  // maxHeight={150}
-                  sx={{
-                    img: {
-                      width: { base: `auto`, md: `100%` },
-                      height: { base: `100px`, md: `auto` },
-                    },
-                  }}
-                >
-                  {prize.prizeImage && (
-                    <GatsbyImage
-                      image={prize.prizeImage.gatsbyImageData}
-                      alt={prize.level}
-                    />
-                  )}
-                </Box>
+                    <Text
+                      color="white"
+                      fontWeight="bold"
+                      fontSize="xl"
+                      textTransform="uppercase"
+                      lineHeight="25px"
+                    >
+                      {prize.level}
+                    </Text>
+                  </Box>
+                  <Box
+                    // px={{ base: 4, lg: 0 }}
+                    mt={{ base: 4, lg: 8 }}
+                    mb={{
+                      base: 4,
+                      lg:
+                        (prize.level === `Grand Prize` && `8`) ||
+                        (prize.level === `Second Place` && `10`) ||
+                        (prize.level === `Third Place` && `12`) ||
+                        (prize.level === `Fourth Place` && `14`),
+                    }}
+                    mx={`auto`}
+                    px={{
+                      base:
+                        (prize.level === `Grand Prize` && 0) ||
+                        (prize.level === `Second Place` && 0) ||
+                        (prize.level === `Third Place` && 0) ||
+                        (prize.level === `Fourth Place` && 0),
+                      lg:
+                        (prize.level === `Grand Prize` && 0) ||
+                        (prize.level === `Second Place` && `4`) ||
+                        (prize.level === `Third Place` && `6`) ||
+                        (prize.level === `Fourth Place` && `8`),
+                    }}
+                    sx={{
+                      img: {
+                        width: { base: `auto`, lg: `100%` },
+                        height: {
+                          base:
+                            (prize.level === `Grand Prize` && `120px`) ||
+                            (prize.level === `Second Place` && `100px`) ||
+                            (prize.level === `Third Place` && `90px`) ||
+                            (prize.level === `Fourth Place` && `80px`),
+                          md:
+                            (prize.level === `Grand Prize` && `180px`) ||
+                            (prize.level === `Second Place` && `160px`) ||
+                            (prize.level === `Third Place` && `150px`) ||
+                            (prize.level === `Fourth Place` && `140px`),
+                          lg: `auto`,
+                        },
+                      },
+                    }}
+                  >
+                    {prize.prizeImage && (
+                      <GatsbyImage
+                        image={prize.prizeImage.gatsbyImageData}
+                        alt={prize.level}
+                      />
+                    )}
+                  </Box>
+                </Flex>
               </GridItem>
             ))}
           </Grid>
@@ -133,13 +174,13 @@ const Hero = ({ data }) => {
         _before={{
           background: "inherit",
           content: `""`,
-          top: { base: -3, md: -20 },
+          top: { base: -8, md: -16 },
           display: "block",
-          height: "100%",
+          height: { base: "100%", lg: "120%" },
           left: 0,
           right: 0,
           position: "absolute",
-          transform: { base: "skewY(-4.5deg)", md: "skewY(-1.5deg)" },
+          transform: { base: "skewY(-4.5deg)", md: "skewY(-2.5deg)" },
           transformOrigin: "0 100%",
           zIndex: -1,
           borderTopWidth: "9px",
@@ -151,11 +192,11 @@ const Hero = ({ data }) => {
           content: `""`,
           bottom: 0,
           display: "block",
-          height: "100%",
+          height: { base: "100%", lg: "120%" },
           left: 0,
           right: 0,
           position: "absolute",
-          transform: { base: "skewY(5.5deg)", md: "skewY(2.5deg)" },
+          transform: { base: "skewY(5.5deg)", md: "skewY(3.5deg)" },
           transformOrigin: "0%",
           zIndex: -1,
           borderBottomWidth: "9px",
@@ -228,7 +269,7 @@ const Hero = ({ data }) => {
             fontSize={{ base: "xl", lg: "3xl" }}
             px={10}
             position="relative"
-            bottom={{ base: "-10", xl: "-14" }}
+            bottom={{ base: "-10", lg: "-16" }}
           >
             {ctaText}
           </Button>
