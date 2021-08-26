@@ -63,5 +63,11 @@ module.exports = {
       },
       __key: "images",
     },
+    {
+      resolve: `gatsby-plugin-facebook-pixel`,
+      options: {
+        pixelId: "749516438830543",
+      },
+    },
   ],
 };

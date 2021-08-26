@@ -130,7 +130,7 @@ const Hero = ({ data }) => {
                         (prize.level === `Grand Prize` && 0) ||
                         (prize.level === `Second Place` && `4`) ||
                         (prize.level === `Third Place` && `6`) ||
-                        (prize.level === `Fourth Place` && `8`),
+                        (prize.level === `Fourth Place` && `10`),
                     }}
                     sx={{
                       img: {
