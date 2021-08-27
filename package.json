@@ -26,7 +26,6 @@
     "framer-motion": "^4.1.17",
     "gatsby": "^3.11.1",
     "gatsby-alias-imports": "^1.0.6",
-    "gatsby-plugin-facebook-pixel": "^1.0.8",
     "gatsby-plugin-image": "^1.12.0",
     "gatsby-plugin-manifest": "^3.12.0",
     "gatsby-plugin-netlify": "^3.12.0",
