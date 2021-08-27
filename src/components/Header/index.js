@@ -13,6 +13,7 @@ const Header = () => {
     introTitle: title,
     introSubTitle: subtitle,
     logo,
+    dateRange,
   } = header;
   //   console.log(id);
   //   console.log(buttonText);
@@ -25,7 +26,7 @@ const Header = () => {
 
   return (
     <Box bg="lightBG">
-      <Grid templateColumns={["100%", "33% 33% 33%"]} py={8}>
+      <Grid templateColumns={["100%", "33% 33% 33%"]} pt={8} pb={4}>
         <GridItem display={{ base: `none`, md: `block` }}></GridItem>
         <GridItem align={`center`} pb={{ base: 8, md: 0 }}>
           <Box as="a" href="/">
@@ -33,10 +34,13 @@ const Header = () => {
               <GatsbyImage
                 image={image}
                 alt={title}
-                style={{ width: `55%`, height: `auto` }}
+                style={{ width: `65%`, height: `auto` }}
               />
             )}
           </Box>
+          <Text mt={4} fontSize={24} fontWeight={800} color={`darkBG`}>
+            {dateRange}
+          </Text>
         </GridItem>
         <GridItem d="grid" placeItems="center">
           {buttonText && buttonLink && (
@@ -83,6 +87,7 @@ const headerQuery = graphql`
       id
       introTitle
       introSubTitle
+      dateRange
       buttonLink
       buttonText
       logo {
