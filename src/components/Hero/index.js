@@ -72,7 +72,7 @@ const Hero = ({ data }) => {
             templateColumns={{ base: "repeat(2, auto)", lg: "repeat(4, 1fr)" }}
             templateRows={{
               base: "repeat(2, minmax(150px, 180px))",
-              md: "repeat(2, minmax(150px, 250px))",
+              md: "repeat(2, minmax(150px, 230px))",
               lg: "repeat(1, auto)",
             }}
             gridGap={`20px 0`}
@@ -112,14 +112,14 @@ const Hero = ({ data }) => {
                   </Box>
                   <Box
                     // px={{ base: 4, lg: 0 }}
-                    mt={{ base: 2, lg: 8 }}
+                    mt={{ base: 2, lg: 4 }}
                     mb={{
                       base: 4,
                       lg:
-                        (prize.level === `Grand Prize` && `6`) ||
-                        (prize.level === `Second Place` && `8`) ||
-                        (prize.level === `Third Place` && `10`) ||
-                        (prize.level === `Fourth Place` && `12`),
+                        (prize.level === `Grand Prize` && `10`) ||
+                        (prize.level === `Second Place` && `12`) ||
+                        (prize.level === `Third Place` && `14`) ||
+                        (prize.level === `Fourth Place` && `16`),
                     }}
                     mx={`auto`}
                     px={{
@@ -129,10 +129,10 @@ const Hero = ({ data }) => {
                         (prize.level === `Third Place` && 0) ||
                         (prize.level === `Fourth Place` && 0),
                       lg:
-                        (prize.level === `Grand Prize` && 0) ||
-                        (prize.level === `Second Place` && `4`) ||
-                        (prize.level === `Third Place` && `6`) ||
-                        (prize.level === `Fourth Place` && `10`),
+                        (prize.level === `Grand Prize` && `2`) ||
+                        (prize.level === `Second Place` && `6`) ||
+                        (prize.level === `Third Place` && `8`) ||
+                        (prize.level === `Fourth Place` && `12`),
                     }}
                     sx={{
                       img: {

@@ -7,7 +7,7 @@ const Footer = () => {
     <Box as="footer" bg="gradient" py={6}>
       <Container>
         <Text textAlign="center" color="primary" fontWeight="bold">
-          Copyright Groceries4Life {currentYear}
+          ©️ {currentYear} Groceries 4 Life All rights reserved.
         </Text>
       </Container>
     </Box>
