@@ -194,7 +194,7 @@ const Hero = ({ data }) => {
           content: `""`,
           bottom: 0,
           display: "block",
-          height: { base: "100%", lg: "100%" },
+          height: { base: "100%", lg: "106%" },
           left: 0,
           right: 0,
           position: "absolute",
