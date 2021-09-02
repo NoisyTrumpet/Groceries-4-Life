@@ -206,7 +206,7 @@ const Hero = ({ data }) => {
           borderBottomColor: "primary",
         }}
       >
-        <Box height={{ base: "170px", md: "110px", xl: "80px" }}>
+        <Box height={{ base: "170px", md: "110px", xl: "100px" }}>
           <Box
             // dangerouslySetInnerHTML={{ __html: subtitle.html }}
             zIndex={4}
