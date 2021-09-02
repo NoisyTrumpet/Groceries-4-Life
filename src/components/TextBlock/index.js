@@ -4,21 +4,22 @@ import * as React from "react";
 
 const TextBlock = ({ title, content, image }) => {
   return (
-    <Box bg="primary" color="white" py="8">
+    <Box bg="primary" color="white" py="6">
       {title && (
-        <Heading as="h2" textAlign="center" mb={8}>
+        <Heading as="h2" textAlign="center" mb={2}>
           {title}
         </Heading>
       )}
       <Container>
         <Grid
           templateColumns={{ base: "100%", md: "50% 50%" }}
-          templateRows={{ base: "auto auto", md: "auto" }}
+          templateRows={{ base: "auto auto", md: "250px" }}
         >
           <GridItem
             borderRight={{ base: `none`, md: "3px solid white" }}
             borderBottom={{ base: "3px solid white", md: `none` }}
-            p={8}
+            px={8}
+            py={4}
           >
             {content && (
               <Box
@@ -27,7 +28,11 @@ const TextBlock = ({ title, content, image }) => {
               />
             )}
           </GridItem>
-          <GridItem py={8} px={20}>
+          <GridItem
+            py={4}
+            px={20}
+            sx={{ img: { width: "auto", height: { base: "100%", xl: "80%" } } }}
+          >
             {image && <GatsbyImage image={image.gatsbyImageData} alt={title} />}
           </GridItem>
         </Grid>

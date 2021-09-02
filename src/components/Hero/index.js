@@ -21,6 +21,7 @@ const Hero = ({ data }) => {
         pos="relative"
         maxW={1500}
         mx={`auto`}
+        mb={`-4%`}
       >
         <GridItem
           position="relative"
@@ -58,7 +59,8 @@ const Hero = ({ data }) => {
               textAlign="center"
               fontSize={{ base: "3xl", md: "5xl" }}
               lineHeight={1.1}
-              py={8}
+              pt={4}
+              pb={8}
               px={4}
               width={{ base: `100%`, md: `80%`, xl: `100%` }}
               mx={`auto`}
@@ -69,7 +71,7 @@ const Hero = ({ data }) => {
           <Grid
             templateColumns={{ base: "repeat(2, auto)", lg: "repeat(4, 1fr)" }}
             templateRows={{
-              base: "repeat(2, minmax(150px, 200px))",
+              base: "repeat(2, minmax(150px, 180px))",
               md: "repeat(2, minmax(150px, 250px))",
               lg: "repeat(1, auto)",
             }}
@@ -110,14 +112,14 @@ const Hero = ({ data }) => {
                   </Box>
                   <Box
                     // px={{ base: 4, lg: 0 }}
-                    mt={{ base: 4, lg: 8 }}
+                    mt={{ base: 2, lg: 8 }}
                     mb={{
                       base: 4,
                       lg:
-                        (prize.level === `Grand Prize` && `8`) ||
-                        (prize.level === `Second Place` && `10`) ||
-                        (prize.level === `Third Place` && `12`) ||
-                        (prize.level === `Fourth Place` && `14`),
+                        (prize.level === `Grand Prize` && `6`) ||
+                        (prize.level === `Second Place` && `8`) ||
+                        (prize.level === `Third Place` && `10`) ||
+                        (prize.level === `Fourth Place` && `12`),
                     }}
                     mx={`auto`}
                     px={{
@@ -166,7 +168,7 @@ const Hero = ({ data }) => {
       </Grid>
       <Box
         pb={0}
-        pt={4}
+        pt={6}
         bg="secondary"
         textAlign="center"
         position="relative"
@@ -174,9 +176,9 @@ const Hero = ({ data }) => {
         _before={{
           background: "inherit",
           content: `""`,
-          top: { base: -8, md: -16 },
+          top: { base: -4, md: -4 },
           display: "block",
-          height: { base: "100%", lg: "120%" },
+          height: { base: "100%", lg: "100%" },
           left: 0,
           right: 0,
           position: "absolute",
@@ -192,7 +194,7 @@ const Hero = ({ data }) => {
           content: `""`,
           bottom: 0,
           display: "block",
-          height: { base: "100%", lg: "120%" },
+          height: { base: "100%", lg: "100%" },
           left: 0,
           right: 0,
           position: "absolute",
@@ -204,76 +206,82 @@ const Hero = ({ data }) => {
           borderBottomColor: "primary",
         }}
       >
-        {/* This can probably just be custom text no need to use this below */}
-        {/* 1 for $25 • 3 for $50 • 10 for $100 */}
-        <Box
-          // dangerouslySetInnerHTML={{ __html: subtitle.html }}
-          zIndex={4}
-          color="primary"
-          // style={{ p: { zIndex: 999 } }}
-          fontSize={{ base: "3xl", lg: "5xl" }}
-          fontWeight="bold"
-          display={`flex`}
-          flexDirection={{ base: `column`, md: `row` }}
-          justifyContent={`center`}
-          alignItems={`center`}
-          px={4}
-          sx={{
-            ".disDot": {
-              display: { base: `none`, md: `block` },
-              mx: 4,
-            },
-          }}
-        >
-          <Text>
-            1{" "}
-            <Box as="span" color={`#fff`} fontSize={{ base: "2xl", lg: "4xl" }}>
-              Raffle Ticket for
-            </Box>{" "}
-            $25
-          </Text>
-          <Text className="disDot">•</Text>
-          <Text>
-            3{" "}
-            <Box as="span" color={`#fff`} fontSize={{ base: "2xl", lg: "4xl" }}>
-              Raffle Tickets for
-            </Box>{" "}
-            $50
-          </Text>
-          <Text className="disDot">•</Text>
-          <Text>
-            10{" "}
-            <Box as="span" color={`#fff`} fontSize={{ base: "2xl", lg: "4xl" }}>
-              Raffle Tickets for
-            </Box>{" "}
-            $100
-          </Text>
-        </Box>
-        {/* {subtitle && (
+        <Box height={{ base: "170px", md: "110px", xl: "80px" }}>
           <Box
-            dangerouslySetInnerHTML={{ __html: subtitle.html }}
+            // dangerouslySetInnerHTML={{ __html: subtitle.html }}
             zIndex={4}
-            color="white"
-            style={{ p: { zIndex: 999 } }}
-            fontSize="6xl"
+            color="primary"
+            // style={{ p: { zIndex: 999 } }}
+            fontSize={{ base: "3xl", lg: "3xl" }}
             fontWeight="bold"
-          />
-        )} */}
-        {ctaLink && ctaText && (
-          <Button
-            as="a"
-            href={ctaLink}
-            variant="primary"
-            textTransform="uppercase"
-            zIndex={4}
-            fontSize={{ base: "xl", lg: "3xl" }}
-            px={10}
-            position="relative"
-            bottom={{ base: "-10", lg: "-16" }}
+            display={`flex`}
+            flexDirection={{ base: `column`, md: `row` }}
+            justifyContent={`center`}
+            alignItems={`center`}
+            px={3}
+            sx={{
+              ".disDot": {
+                display: { base: `none`, md: `block` },
+                mx: 4,
+              },
+              p: {
+                lineHeight: 1,
+                height: "50px",
+              },
+            }}
           >
-            {ctaText}
-          </Button>
-        )}
+            <Text>
+              1{" "}
+              <Box
+                as="span"
+                color={`#fff`}
+                fontSize={{ base: "2xl", lg: "3xl" }}
+              >
+                Raffle Ticket for
+              </Box>{" "}
+              $25
+            </Text>
+            <Text className="disDot">•</Text>
+            <Text>
+              3{" "}
+              <Box
+                as="span"
+                color={`#fff`}
+                fontSize={{ base: "2xl", lg: "3xl" }}
+              >
+                Raffle Tickets for
+              </Box>{" "}
+              $50
+            </Text>
+            <Text className="disDot">•</Text>
+            <Text>
+              10{" "}
+              <Box
+                as="span"
+                color={`#fff`}
+                fontSize={{ base: "2xl", lg: "3xl" }}
+              >
+                Raffle Tickets for
+              </Box>{" "}
+              $100
+            </Text>
+          </Box>
+          {ctaLink && ctaText && (
+            <Button
+              as="a"
+              href={ctaLink}
+              variant="primary"
+              textTransform="uppercase"
+              zIndex={4}
+              fontSize={{ base: "xl", lg: "3xl" }}
+              px={10}
+              position="relative"
+              bottom={{ base: "-2", md: "-12", xl: "-8" }}
+            >
+              {ctaText}
+            </Button>
+          )}
+        </Box>
       </Box>
     </Box>
   );
