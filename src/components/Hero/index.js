@@ -276,7 +276,7 @@ const Hero = ({ data }) => {
               fontSize={{ base: "xl", lg: "3xl" }}
               px={10}
               position="relative"
-              bottom={{ base: "-2", md: "-12", xl: "-8" }}
+              bottom={{ base: "-2", md: "-12", xl: "-12" }}
             >
               {ctaText}
             </Button>
