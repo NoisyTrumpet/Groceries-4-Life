@@ -206,7 +206,9 @@ const Hero = ({ data }) => {
           borderBottomColor: "primary",
         }}
       >
-        <Box height={{ base: "170px", md: "110px", xl: "100px" }}>
+        <Box
+          height={{ base: "200px", md: "110px", xl: "100px", "2xl": "150px" }}
+        >
           <Box
             // dangerouslySetInnerHTML={{ __html: subtitle.html }}
             zIndex={4}
@@ -216,8 +218,9 @@ const Hero = ({ data }) => {
             fontWeight="bold"
             display={`flex`}
             flexDirection={{ base: `column`, md: `row` }}
-            justifyContent={`center`}
+            justifyContent={{ base: `flex-start`, md: `center` }}
             alignItems={`center`}
+            height={"100%"}
             px={3}
             sx={{
               ".disDot": {
@@ -276,7 +279,7 @@ const Hero = ({ data }) => {
               fontSize={{ base: "xl", lg: "3xl" }}
               px={10}
               position="relative"
-              bottom={{ base: "-2", md: "-12", xl: "-12" }}
+              bottom={{ base: "4", md: "0", "2xl": "-6" }}
             >
               {ctaText}
             </Button>

@@ -11,7 +11,11 @@ import * as React from "react";
 
 const Benefits = ({ title, items }) => {
   return (
-    <Box textAlign="center" pt={{ base: "20", lg: "6em" }} pb="10">
+    <Box
+      textAlign="center"
+      pt={{ base: "20", lg: "6em", "2xl": "8em" }}
+      pb="10"
+    >
       <Container>
         {title && (
           <Heading as="h2" color="black" maxW={800} mx={`auto`}>
