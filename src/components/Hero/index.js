@@ -85,7 +85,7 @@ const Hero = ({ data }) => {
               <GridItem
                 key={i}
                 textAlign="center"
-                width={{ base: `200px`, md: `280px`, lg: "fit-content" }}
+                width={{ base: `100%`, md: `280px`, lg: "fit-content" }}
               >
                 <Flex
                   flexDirection={`column`}
@@ -139,8 +139,8 @@ const Hero = ({ data }) => {
                         width: { base: `auto`, lg: `100%` },
                         height: {
                           base:
-                            (prize.level === `Grand Prize` && `120px`) ||
-                            (prize.level === `Second Place` && `100px`) ||
+                            (prize.level === `Grand Prize` && `110px`) ||
+                            (prize.level === `Second Place` && `90px`) ||
                             (prize.level === `Third Place` && `90px`) ||
                             (prize.level === `Fourth Place` && `80px`),
                           md:
