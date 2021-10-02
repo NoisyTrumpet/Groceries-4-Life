@@ -31,7 +31,7 @@ const TextBlock = ({ title, content, image }) => {
           <GridItem
             py={4}
             px={{ base: "10", md: "20" }}
-            sx={{ img: { width: "auto", height: { base: "100%", lg: "80%" } } }}
+            sx={{ img: { height: "auto", width: { base: "100%", lg: "80%" } } }}
           >
             {image && <GatsbyImage image={image.gatsbyImageData} alt={title} />}
           </GridItem>

@@ -168,7 +168,7 @@ const Hero = ({ data }) => {
       </Grid>
       <Box
         pb={0}
-        pt={6}
+        pt={{ base: 3, md: 0 }}
         bg="secondary"
         textAlign="center"
         position="relative"
@@ -207,7 +207,10 @@ const Hero = ({ data }) => {
         }}
       >
         <Box
-          height={{ base: "200px", md: "110px", xl: "100px", "2xl": "150px" }}
+          height={{ base: "100%", xl: "120px", "2xl": "150px" }}
+          max-height={{ base: "275px", xl: "revert" }}
+          pt={3}
+          pb={4}
         >
           <Box
             // dangerouslySetInnerHTML={{ __html: subtitle.html }}
@@ -228,12 +231,23 @@ const Hero = ({ data }) => {
                 mx: 4,
               },
               p: {
-                lineHeight: 1,
-                height: "50px",
+                lineHeight: 1.2,
+                // height: "50px",
               },
             }}
           >
             <Text>
+              <Box
+                as="span"
+                color={`#fff`}
+                fontSize={{ base: "2xl", lg: "3xl" }}
+              >
+                Thank you for supporting Ballet San Antonio, San Antonio Chamber
+                Choir, San Antonio Museum of Art, and YOSA (Youth Orchestras of
+                San Antonio).
+              </Box>
+            </Text>
+            {/* <Text>
               1{" "}
               <Box
                 as="span"
@@ -267,9 +281,9 @@ const Hero = ({ data }) => {
                 Raffle Tickets for
               </Box>{" "}
               $100
-            </Text>
+            </Text> */}
           </Box>
-          {ctaLink && ctaText && (
+          {/* {ctaLink && ctaText && (
             <Button
               as="a"
               href={ctaLink}
@@ -283,7 +297,7 @@ const Hero = ({ data }) => {
             >
               {ctaText}
             </Button>
-          )}
+          )} */}
         </Box>
       </Box>
     </Box>

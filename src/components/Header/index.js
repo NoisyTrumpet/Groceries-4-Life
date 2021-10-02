@@ -42,7 +42,7 @@ const Header = () => {
             {dateRange}
           </Text>
         </GridItem>
-        <GridItem d="grid" placeItems="center">
+        {/* <GridItem d="grid" placeItems="center">
           {buttonText && buttonLink && (
             <Button
               as="a"
@@ -55,7 +55,7 @@ const Header = () => {
               {buttonText}
             </Button>
           )}
-        </GridItem>
+        </GridItem> */}
       </Grid>
       <Box
         textAlign="center"
@@ -72,7 +72,7 @@ const Header = () => {
           </Heading>
         )}
         {subtitle && (
-          <Text fontSize={{ base: `3xl`, md: `5xl` }}>{subtitle}</Text>
+          <Text fontSize={{ base: `xl`, md: `3xl` }}>{subtitle}</Text>
         )}
       </Box>
     </Box>
