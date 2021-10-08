@@ -12,6 +12,7 @@ const Header = () => {
     buttonLink,
     introTitle: title,
     introSubTitle: subtitle,
+    multiLineSub,
     logo,
     dateRange,
   } = header;
@@ -74,6 +75,15 @@ const Header = () => {
         {subtitle && (
           <Text fontSize={{ base: `xl`, md: `3xl` }}>{subtitle}</Text>
         )}
+        <Text fontSize={{ base: `xl`, md: `3xl` }}>
+          Grand Prize: Diane Baird-Barger - Schertz
+          <br />
+          2nd Place: Agnes Pawelek - Karnes City
+          <br />
+          3rd Place: Rudy Hernandez - New Braunfels
+          <br />
+          4th Place: Kristal Eaker - Helotes
+        </Text>
       </Box>
     </Box>
   );
