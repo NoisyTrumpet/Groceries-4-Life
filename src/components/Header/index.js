@@ -1,8 +1,12 @@
-import * as React from "react";
+import React, { forwardRef } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 // import PropTypes from "prop-types";
 import { Box, Button, Grid, GridItem, Heading, Text } from "@chakra-ui/react";
-import { GatsbyImage } from "gatsby-plugin-image";
+import SVG from 'react-inlinesvg';
+
+const Logo = forwardRef((props, ref) => (
+  <SVG innerRef={ref} title={props?.title ?? ``} {...props} />
+));
 
 const Header = () => {
   const { graphCmsHeader: header } = useStaticQuery(headerQuery);
@@ -16,14 +20,7 @@ const Header = () => {
     logo,
     dateRange,
   } = header;
-  //   console.log(id);
-  //   console.log(buttonText);
-  //   console.log(buttonLink);
-  //   console.log(title);
-  //   console.log(subtitle);
-  //   console.log(logo);
 
-  const image = logo.gatsbyImageData;
 
   return (
     <Box bg="lightBG">
@@ -31,19 +28,13 @@ const Header = () => {
         <GridItem display={{ base: `none`, md: `block` }}></GridItem>
         <GridItem align={`center`} pb={{ base: 8, md: 0 }}>
           <Box as="a" href="/">
-            {image && title && (
-              <GatsbyImage
-                image={image}
-                alt={title}
-                style={{ width: `65%`, height: `auto` }}
-              />
-            )}
+            <Logo src={logo.url} title={`test`} />
           </Box>
           <Text mt={4} fontSize={24} fontWeight={800} color={`darkBG`}>
             {dateRange}
           </Text>
         </GridItem>
-        {/* <GridItem d="grid" placeItems="center">
+        <GridItem d="grid" placeItems="center">
           {buttonText && buttonLink && (
             <Button
               as="a"
@@ -56,7 +47,7 @@ const Header = () => {
               {buttonText}
             </Button>
           )}
-        </GridItem> */}
+        </GridItem>
       </Grid>
       <Box
         textAlign="center"
@@ -75,15 +66,6 @@ const Header = () => {
         {subtitle && (
           <Text fontSize={{ base: `xl`, md: `3xl` }}>{subtitle}</Text>
         )}
-        <Text fontSize={{ base: `xl`, md: `3xl` }}>
-          Grand Prize: Diane Baird-Barger - Schertz
-          <br />
-          2nd Place: Agnes Pawelek - Karnes City
-          <br />
-          3rd Place: Rudy Hernandez - New Braunfels
-          <br />
-          4th Place: Kristal Eaker - Helotes
-        </Text>
       </Box>
     </Box>
   );
@@ -101,7 +83,7 @@ const headerQuery = graphql`
       buttonLink
       buttonText
       logo {
-        gatsbyImageData(placeholder: BLURRED, quality: 60, layout: CONSTRAINED)
+        url
       }
     }
   }

@@ -1,4 +1,5 @@
-import { Box, Grid, GridItem, Text, Button, Flex } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
+import { Box, Grid, GridItem, Text, Flex } from "@chakra-ui/layout";
 import { GatsbyImage } from "gatsby-plugin-image";
 import * as React from "react";
 
@@ -69,7 +70,7 @@ const Hero = ({ data }) => {
             </Text>
           )}
           <Grid
-            templateColumns={{ base: "repeat(2, auto)", lg: "repeat(4, 1fr)" }}
+            templateColumns={{ base: "repeat(2, auto)", lg: "repeat(2, 1fr)" }}
             templateRows={{
               base: "repeat(2, minmax(150px, 180px))",
               md: "repeat(2, minmax(150px, 230px))",
@@ -78,7 +79,7 @@ const Hero = ({ data }) => {
             gridGap={`20px 0`}
             justifyContent={`space-evenly`}
             px={4}
-            // pb={8}
+          // pb={8}
           >
             {/* Map thorugh prizes */}
             {prizes.map((prize, i) => (
@@ -213,10 +214,10 @@ const Hero = ({ data }) => {
           pb={4}
         >
           <Box
-            // dangerouslySetInnerHTML={{ __html: subtitle.html }}
+            dangerouslySetInnerHTML={{ __html: subtitle.html }}
             zIndex={4}
             color="primary"
-            // style={{ p: { zIndex: 999 } }}
+            style={{ color: `white`, p: { zIndex: 999 } }}
             fontSize={{ base: "3xl", lg: "3xl" }}
             fontWeight="bold"
             display={`flex`}
@@ -236,54 +237,8 @@ const Hero = ({ data }) => {
               },
             }}
           >
-            <Text>
-              <Box
-                as="span"
-                color={`#fff`}
-                fontSize={{ base: "2xl", lg: "3xl" }}
-              >
-                Thank you for supporting Ballet San Antonio, San Antonio Chamber
-                Choir, San Antonio Museum of Art, and YOSA (Youth Orchestras of
-                San Antonio).
-              </Box>
-            </Text>
-            {/* <Text>
-              1{" "}
-              <Box
-                as="span"
-                color={`#fff`}
-                fontSize={{ base: "2xl", lg: "3xl" }}
-              >
-                Raffle Ticket for
-              </Box>{" "}
-              $25
-            </Text>
-            <Text className="disDot">•</Text>
-            <Text>
-              3{" "}
-              <Box
-                as="span"
-                color={`#fff`}
-                fontSize={{ base: "2xl", lg: "3xl" }}
-              >
-                Raffle Tickets for
-              </Box>{" "}
-              $50
-            </Text>
-            <Text className="disDot">•</Text>
-            <Text>
-              10{" "}
-              <Box
-                as="span"
-                color={`#fff`}
-                fontSize={{ base: "2xl", lg: "3xl" }}
-              >
-                Raffle Tickets for
-              </Box>{" "}
-              $100
-            </Text> */}
           </Box>
-          {/* {ctaLink && ctaText && (
+          {ctaLink && ctaText && (
             <Button
               as="a"
               href={ctaLink}
@@ -297,7 +252,7 @@ const Hero = ({ data }) => {
             >
               {ctaText}
             </Button>
-          )} */}
+          )}
         </Box>
       </Box>
     </Box>
