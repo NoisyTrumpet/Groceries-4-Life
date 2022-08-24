@@ -40,6 +40,7 @@ const Market = ({ name, beneficiaries }: MarketProps) => {
               const itemStyles = {
                 display: "grid",
                 placeItems: "center",
+                minHeight: "170px",
                 img: {
                   maxHeight: "200px",
                 },
