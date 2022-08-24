@@ -6,7 +6,7 @@ import Layout from "Components/Layout";
 import TermsBlock from "Components/TermsBlock";
 import Seo from "Components/Seo";
 
-const IndexPage = ({ data: page }) => {
+function IndexPage({ data: page }) {
   const { textBlocks, seoMeta } = page.graphCmsTerm;
   const { seoTitle, seoDescription } = seoMeta;
 
@@ -17,7 +17,7 @@ const IndexPage = ({ data: page }) => {
       <TermsBlock content={textBlocks} />
     </Layout>
   );
-};
+}
 
 export default IndexPage;
 

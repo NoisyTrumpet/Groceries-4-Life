@@ -9,7 +9,7 @@ import {
 import { GatsbyImage } from "gatsby-plugin-image";
 import * as React from "react";
 
-const Benefits = ({ title, items }) => {
+function Benefits({ title, items }) {
   return (
     <Box
       textAlign="center"
@@ -18,15 +18,15 @@ const Benefits = ({ title, items }) => {
     >
       <Container>
         {title && (
-          <Heading as="h2" color="black" maxW={800} mx={`auto`}>
+          <Heading as="h2" color="black" maxW={800} mx="auto">
             {title}
           </Heading>
         )}
         <Flex
-          flexDirection={`row`}
+          flexDirection="row"
           flexWrap="wrap"
-          alignItems={`center`}
-          justifyContent={`center`}
+          alignItems="center"
+          justifyContent="center"
           pl={{ base: 0, md: 8 }}
         >
           {items &&
@@ -34,30 +34,30 @@ const Benefits = ({ title, items }) => {
               <Box
                 key={item.id}
                 py={4}
-                flex={{ base: `200px`, lg: `1` }}
+                flex={{ base: "200px", lg: "1" }}
                 maxHeight={200}
                 maxWidth={{ base: 150, md: 250 }}
                 px={{
                   base:
-                    (item.name === `SAMA` && 0) ||
-                    (item.name === `The Public Theater of San Antonio` &&
-                      `9`) ||
-                    (item.name === `San Antonio Chamber Choir` && `6`) ||
-                    (item.name === `Ballet San Antonio` && 0) ||
-                    (item.name === `Youth Orchestras of San Antonio` && `10`),
+                    (item.name === "SAMA" && 0) ||
+                    (item.name === "The Public Theater of San Antonio" &&
+                      "9") ||
+                    (item.name === "San Antonio Chamber Choir" && "6") ||
+                    (item.name === "Ballet San Antonio" && 0) ||
+                    (item.name === "Youth Orchestras of San Antonio" && "10"),
                   md:
-                    (item.name === `SAMA` && 0) ||
-                    (item.name === `The Public Theater of San Antonio` &&
-                      `16`) ||
-                    (item.name === `San Antonio Chamber Choir` && `6`) ||
-                    (item.name === `Ballet San Antonio` && 0) ||
-                    (item.name === `Youth Orchestras of San Antonio` && `10`),
+                    (item.name === "SAMA" && 0) ||
+                    (item.name === "The Public Theater of San Antonio" &&
+                      "16") ||
+                    (item.name === "San Antonio Chamber Choir" && "6") ||
+                    (item.name === "Ballet San Antonio" && 0) ||
+                    (item.name === "Youth Orchestras of San Antonio" && "10"),
                 }}
               >
                 <GatsbyImage
                   image={item.logo.gatsbyImageData}
                   alt={item.name}
-                  style={{ width: `100%`, height: `auto` }}
+                  style={{ width: "100%", height: "auto" }}
                 />
               </Box>
             ))}
@@ -65,6 +65,6 @@ const Benefits = ({ title, items }) => {
       </Container>
     </Box>
   );
-};
+}
 
 export default Benefits;

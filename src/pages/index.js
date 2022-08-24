@@ -7,10 +7,10 @@ import Hero from "Components/Hero";
 import Benefits from "Components/Benefit";
 import TextBlock from "Components/TextBlock";
 import Seo from "Components/Seo";
-import Market from "../components/Market";
 import { Container, Grid, Heading } from "@chakra-ui/layout";
+import Market from "../components/Market";
 
-const IndexPage = ({ data: page }) => {
+function IndexPage({ data: page }) {
   const {
     hero,
     beneficiaries,
@@ -34,7 +34,7 @@ const IndexPage = ({ data: page }) => {
           as="h2"
           color="black"
           maxW={800}
-          mx={`auto`}
+          mx="auto"
           fontSize={["2xl", "3xl", "4xl"]}
           textAlign="center"
         >
@@ -55,7 +55,7 @@ const IndexPage = ({ data: page }) => {
       />
     </Layout>
   );
-};
+}
 
 export default IndexPage;
 

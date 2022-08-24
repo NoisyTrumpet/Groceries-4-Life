@@ -2,11 +2,12 @@ import React from "react";
 import { RichText } from "@graphcms/rich-text-react-renderer";
 import { Link } from "gatsby";
 import { Text } from "@chakra-ui/react";
+
 interface TextContentProps {
   content: any;
 }
 
-const TextContent = ({ content }: TextContentProps) => {
+function TextContent({ content }: TextContentProps) {
   console.log(content);
   return (
     <RichText
@@ -30,7 +31,7 @@ const TextContent = ({ content }: TextContentProps) => {
         },
 
         p: ({ children, ...rest }) => (
-          <Text as="p" display={`block`}>
+          <Text as="p" display="block">
             {children}
           </Text>
         ),
@@ -47,6 +48,6 @@ const TextContent = ({ content }: TextContentProps) => {
       }}
     />
   );
-};
+}
 
 export default TextContent;

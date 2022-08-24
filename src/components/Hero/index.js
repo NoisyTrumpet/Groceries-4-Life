@@ -5,7 +5,7 @@ import * as React from "react";
 import { RichText } from "@graphcms/rich-text-react-renderer";
 import TextContent from "../TextContent";
 
-const Hero = ({ data }) => {
+function Hero({ data }) {
   const {
     id,
     title,
@@ -22,8 +22,8 @@ const Hero = ({ data }) => {
         templateRows={{ base: "auto", lg: "auto" }}
         pos="relative"
         maxW={1500}
-        mx={`auto`}
-        mb={`-4%`}
+        mx="auto"
+        mb="-4%"
       >
         <GridItem
           position="relative"
@@ -37,8 +37,13 @@ const Hero = ({ data }) => {
               left={{ base: "-8", lg: "-16" }}
               bottom={{ base: "-8", md: "-8" }}
               overflow="visible"
-              display={{ base: `none`, lg: `block` }}
-              width={{ base: 400, md: 540, lg: 480, xl: 580 }}
+              display={{ base: "none", lg: "block" }}
+              width={{
+                base: 400,
+                md: 540,
+                lg: 480,
+                xl: 580,
+              }}
               mt={{ base: -8, lg: 0 }}
             >
               <GatsbyImage
@@ -64,8 +69,8 @@ const Hero = ({ data }) => {
               pt={4}
               pb={8}
               px={4}
-              width={{ base: `100%`, md: `80%`, xl: `100%` }}
-              mx={`auto`}
+              width={{ base: "100%", md: "80%", xl: "100%" }}
+              mx="auto"
             >
               {title}
             </Text>
@@ -73,7 +78,7 @@ const Hero = ({ data }) => {
           <Grid
             templateColumns={{ base: "repeat(2, auto)", lg: "repeat(2, 1fr)" }}
             gap={2}
-            justifyContent={`space-evenly`}
+            justifyContent="space-evenly"
             px={[0, 4]}
             // pb={8}
           >
@@ -82,12 +87,12 @@ const Hero = ({ data }) => {
               <GridItem
                 key={i}
                 textAlign="center"
-                width={{ base: `100%`, md: `280px`, lg: "fit-content" }}
+                width={{ base: "100%", md: "280px", lg: "fit-content" }}
               >
                 <Flex
-                  flexDirection={`column`}
-                  height={`100%`}
-                  justifyContent={`space-between`}
+                  flexDirection="column"
+                  height="100%"
+                  justifyContent="space-between"
                 >
                   <Box
                     // px={{ base: 4, lg: 0 }}
@@ -95,29 +100,29 @@ const Hero = ({ data }) => {
                     mb={{
                       base: 4,
                       lg:
-                        (prize.level === `Groceries` && `10`) ||
-                        (prize.level === `Gas` && `12`),
+                        (prize.level === "Groceries" && "10") ||
+                        (prize.level === "Gas" && "12"),
                     }}
-                    mx={`auto`}
+                    mx="auto"
                     px={{
                       base:
-                        (prize.level === `Groceries` && 0) ||
-                        (prize.level === `Gas` && 0),
+                        (prize.level === "Groceries" && 0) ||
+                        (prize.level === "Gas" && 0),
                       lg:
-                        (prize.level === `Groceries` && `2`) ||
-                        (prize.level === `Gas` && `6`),
+                        (prize.level === "Groceries" && "2") ||
+                        (prize.level === "Gas" && "6"),
                     }}
                     sx={{
                       img: {
-                        width: { base: `auto`, lg: `100%` },
+                        width: { base: "auto", lg: "100%" },
                         height: {
                           base:
-                            (prize.level === `Groceries` && `140px`) ||
-                            (prize.level === `Gas` && `140px`),
+                            (prize.level === "Groceries" && "140px") ||
+                            (prize.level === "Gas" && "140px"),
                           md:
-                            (prize.level === `Groceries` && `200px`) ||
-                            (prize.level === `Gas` && `200px`),
-                          lg: `auto`,
+                            (prize.level === "Groceries" && "200px") ||
+                            (prize.level === "Gas" && "200px"),
+                          lg: "auto",
                         },
                       },
                     }}
@@ -144,7 +149,7 @@ const Hero = ({ data }) => {
         zIndex={8}
         _before={{
           background: "inherit",
-          content: `""`,
+          content: '""',
           top: { base: -4, md: -4 },
           display: "block",
           height: { base: "100%", lg: "100%" },
@@ -160,7 +165,7 @@ const Hero = ({ data }) => {
         }}
         _after={{
           background: "inherit",
-          content: `""`,
+          content: '""',
           bottom: 0,
           display: "block",
           height: { base: "100%", lg: "106%" },
@@ -183,14 +188,14 @@ const Hero = ({ data }) => {
         >
           <Box
             zIndex={4}
-            style={{ color: `white`, p: { zIndex: 999 } }}
+            style={{ color: "white", p: { zIndex: 999 } }}
             fontSize={{ base: "3xl", lg: "3xl" }}
             fontWeight="bold"
             px={3}
             textAlign="center"
             sx={{
               ".disDot": {
-                display: { base: `none`, md: `block` },
+                display: { base: "none", md: "block" },
                 mx: 4,
               },
               p: {
@@ -220,6 +225,6 @@ const Hero = ({ data }) => {
       </Box>
     </Box>
   );
-};
+}
 
 export default Hero;

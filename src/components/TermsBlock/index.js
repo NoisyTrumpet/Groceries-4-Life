@@ -1,7 +1,7 @@
 import { Box, Heading, Container } from "@chakra-ui/react";
 import * as React from "react";
 
-const TermsBlock = ({ content }) => {
+function TermsBlock({ content }) {
   return (
     <Box>
       {content.map((item) => (
@@ -24,6 +24,6 @@ const TermsBlock = ({ content }) => {
       ))}
     </Box>
   );
-};
+}
 
 export default TermsBlock;

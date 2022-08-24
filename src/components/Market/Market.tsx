@@ -9,17 +9,17 @@ interface MarketProps {
 }
 
 const Logo = forwardRef<SVGElement, SVGProps>((props, ref) => (
-  <SVG innerRef={ref} title={props?.title ?? ``} {...props} />
+  <SVG innerRef={ref} title={props?.title ?? ""} {...props} />
 ));
 
-const Market = ({ name, beneficiaries }: MarketProps) => {
+function Market({ name, beneficiaries }: MarketProps) {
   return (
     <section>
       <Box my={[4, 8, 12]}>
         <Heading
           as="h2"
           color="black"
-          textAlign={`center`}
+          textAlign="center"
           fontSize={["2xl", "3xl", "4xl"]}
         >
           {name}
@@ -108,6 +108,6 @@ const Market = ({ name, beneficiaries }: MarketProps) => {
       </Box>
     </section>
   );
-};
+}
 
 export default Market;

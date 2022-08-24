@@ -18,7 +18,7 @@ import { SkipNavContent, SkipNavLink } from "Components/SkipNav/index";
 import "Styles/main.scss";
 import { Helmet } from "react-helmet";
 
-const Layout = ({ children }) => {
+function Layout({ children }) {
   // const { pathname } = useLocation();
   return (
     <ChakraProvider theme={theme}>
@@ -60,6 +60,6 @@ const Layout = ({ children }) => {
       <Footer />
     </ChakraProvider>
   );
-};
+}
 
 export default Layout;

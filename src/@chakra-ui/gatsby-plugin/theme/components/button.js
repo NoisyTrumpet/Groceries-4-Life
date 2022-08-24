@@ -6,7 +6,7 @@ const Button = {
     // borderBottomRightRadius: "22",
     // borderBottomLeftRadius: "22",
     transition: "all 0.2s ease-in-out",
-    fontFamily: `var(--chakra-fonts-heading)`,
+    fontFamily: "var(--chakra-fonts-heading)",
     px: 10,
     py: 8,
     _hover: {

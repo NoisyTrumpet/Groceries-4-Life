@@ -25,7 +25,7 @@ const codeStyles = {
 };
 
 // markup
-const NotFoundPage = () => {
+function NotFoundPage() {
   return (
     <main style={pageStyles}>
       <title>Not found</title>
@@ -40,7 +40,8 @@ const NotFoundPage = () => {
         {process.env.NODE_ENV === "development" ? (
           <>
             <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
+            Try creating a page in <code style={codeStyles}>src/pages/</code>
+            .
             <br />
           </>
         ) : null}
@@ -49,6 +50,6 @@ const NotFoundPage = () => {
       </p>
     </main>
   );
-};
+}
 
 export default NotFoundPage;

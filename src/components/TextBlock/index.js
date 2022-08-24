@@ -4,10 +4,10 @@ import React, { forwardRef } from "react";
 import SVG from "react-inlinesvg";
 
 const Image = forwardRef((props, ref) => (
-  <SVG innerRef={ref} title={props?.title ?? ``} {...props} />
+  <SVG innerRef={ref} title={props?.title ?? ""} {...props} />
 ));
 
-const TextBlock = ({ title, content, image }) => {
+function TextBlock({ title, content, image }) {
   const imageType = image.mimeType;
 
   const isSVG = imageType === "image/svg+xml";
@@ -26,8 +26,8 @@ const TextBlock = ({ title, content, image }) => {
           templateRows={{ base: "auto auto", md: "250px" }}
         >
           <GridItem
-            borderRight={{ base: `none`, md: "3px solid white" }}
-            borderBottom={{ base: "3px solid white", md: `none` }}
+            borderRight={{ base: "none", md: "3px solid white" }}
+            borderBottom={{ base: "3px solid white", md: "none" }}
             px={8}
             py={4}
           >
@@ -52,6 +52,6 @@ const TextBlock = ({ title, content, image }) => {
       </Container>
     </Box>
   );
-};
+}
 
 export default TextBlock;
