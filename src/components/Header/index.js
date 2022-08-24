@@ -2,7 +2,7 @@ import React, { forwardRef } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 // import PropTypes from "prop-types";
 import { Box, Button, Grid, GridItem, Heading, Text } from "@chakra-ui/react";
-import SVG from 'react-inlinesvg';
+import SVG from "react-inlinesvg";
 
 const Logo = forwardRef((props, ref) => (
   <SVG innerRef={ref} title={props?.title ?? ``} {...props} />
@@ -20,7 +20,6 @@ const Header = () => {
     logo,
     dateRange,
   } = header;
-
 
   return (
     <Box bg="lightBG">

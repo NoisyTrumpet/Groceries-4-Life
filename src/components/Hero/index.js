@@ -2,6 +2,8 @@ import { Button } from "@chakra-ui/react";
 import { Box, Grid, GridItem, Text, Flex } from "@chakra-ui/layout";
 import { GatsbyImage } from "gatsby-plugin-image";
 import * as React from "react";
+import { RichText } from '@graphcms/rich-text-react-renderer';
+import TextContent from "../TextContent";
 
 const Hero = ({ data }) => {
   const {
@@ -13,7 +15,6 @@ const Hero = ({ data }) => {
     ctaText,
     image,
   } = data;
-  console.log(data);
   return (
     <Box id={id} bg="gradient">
       <Grid
@@ -94,61 +95,33 @@ const Hero = ({ data }) => {
                   justifyContent={`space-between`}
                 >
                   <Box
-                    borderBottomColor="primary"
-                    borderBottomWidth="3px"
-                    borderBottomStyle="solid"
-                    maxW={{ base: "60%", xl: "50%" }}
-                    mx="auto"
-                    pb={2}
-                  >
-                    <Text
-                      color="white"
-                      fontWeight="bold"
-                      fontSize="xl"
-                      textTransform="uppercase"
-                      lineHeight="25px"
-                    >
-                      {prize.level}
-                    </Text>
-                  </Box>
-                  <Box
                     // px={{ base: 4, lg: 0 }}
                     mt={{ base: 2, lg: 4 }}
                     mb={{
                       base: 4,
                       lg:
-                        (prize.level === `Grand Prize` && `10`) ||
-                        (prize.level === `Second Place` && `12`) ||
-                        (prize.level === `Third Place` && `14`) ||
-                        (prize.level === `Fourth Place` && `16`),
+                        (prize.level === `Groceries` && `10`) ||
+                        (prize.level === `Gas` && `12`),
                     }}
                     mx={`auto`}
                     px={{
                       base:
-                        (prize.level === `Grand Prize` && 0) ||
-                        (prize.level === `Second Place` && 0) ||
-                        (prize.level === `Third Place` && 0) ||
-                        (prize.level === `Fourth Place` && 0),
+                        (prize.level === `Groceries` && 0) ||
+                        (prize.level === `Gas` && 0),
                       lg:
-                        (prize.level === `Grand Prize` && `2`) ||
-                        (prize.level === `Second Place` && `6`) ||
-                        (prize.level === `Third Place` && `8`) ||
-                        (prize.level === `Fourth Place` && `12`),
+                        (prize.level === `Groceries` && `2`) ||
+                        (prize.level === `Gas` && `6`),
                     }}
                     sx={{
                       img: {
                         width: { base: `auto`, lg: `100%` },
                         height: {
                           base:
-                            (prize.level === `Grand Prize` && `110px`) ||
-                            (prize.level === `Second Place` && `90px`) ||
-                            (prize.level === `Third Place` && `90px`) ||
-                            (prize.level === `Fourth Place` && `80px`),
+                            (prize.level === `Groceries` && `110px`) ||
+                            (prize.level === `Gas` && `90px`),
                           md:
-                            (prize.level === `Grand Prize` && `180px`) ||
-                            (prize.level === `Second Place` && `160px`) ||
-                            (prize.level === `Third Place` && `150px`) ||
-                            (prize.level === `Fourth Place` && `140px`),
+                            (prize.level === `Groceries` && `180px`) ||
+                            (prize.level === `Gas` && `160px`),
                           lg: `auto`,
                         },
                       },
@@ -214,18 +187,13 @@ const Hero = ({ data }) => {
           pb={4}
         >
           <Box
-            dangerouslySetInnerHTML={{ __html: subtitle.html }}
+
             zIndex={4}
-            color="primary"
             style={{ color: `white`, p: { zIndex: 999 } }}
             fontSize={{ base: "3xl", lg: "3xl" }}
             fontWeight="bold"
-            display={`flex`}
-            flexDirection={{ base: `column`, md: `row` }}
-            justifyContent={{ base: `flex-start`, md: `center` }}
-            alignItems={`center`}
-            height={"100%"}
             px={3}
+            textAlign="center"
             sx={{
               ".disDot": {
                 display: { base: `none`, md: `block` },
@@ -237,6 +205,9 @@ const Hero = ({ data }) => {
               },
             }}
           >
+            <TextContent
+              content={subtitle.raw}
+            />
           </Box>
           {ctaLink && ctaText && (
             <Button

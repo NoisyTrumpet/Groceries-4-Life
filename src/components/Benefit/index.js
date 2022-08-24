@@ -34,7 +34,6 @@ const Benefits = ({ title, items }) => {
               <Box
                 key={item.id}
                 py={4}
-                maxWidth={`fit-content`}
                 flex={{ base: `200px`, lg: `1` }}
                 maxHeight={200}
                 maxWidth={{ base: 150, md: 250 }}
@@ -63,37 +62,6 @@ const Benefits = ({ title, items }) => {
               </Box>
             ))}
         </Flex>
-        {/* <Grid
-          templateColumns={{base: "repeat(3, auto)", md: "repeat(5, auto)"}}
-          templateRows={{base: "repeat(2, auto)", md: "repeat(1, auto)"}}
-          alignItems={`center`}
-        >
-          {items &&
-            items.map((item) => (
-              <GridItem
-                key={item.id}
-                py={4}
-                sx={{
-                  img: {
-                    mx: `auto`,
-                    minWidth: `10px`,
-                    width: 
-                      (item.name === `SAMA` && `100%`) ||
-                      (item.name === `The Public Theater of San Antonio` && `50%`) ||
-                      (item.name === `San Antonio Chamber Choir` && `70%`) ||
-                      (item.name === `Ballet San Antonio` && `100%`) ||
-                      (item.name === `Youth Orchestras of San Antonio` && `60%`),
-                  },
-                }}
-              >
-                <GatsbyImage
-                  image={item.logo.gatsbyImageData}
-                  alt={item.name}
-                  style={{width: `fit-content`}}
-                />
-              </GridItem>
-            ))}
-        </Grid> */}
       </Container>
     </Box>
   );

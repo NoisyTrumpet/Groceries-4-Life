@@ -21,6 +21,7 @@
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
     "@fontsource/montserrat": "^4.5.12",
+    "@graphcms/rich-text-react-renderer": "^0.6.1",
     "cross-env": "^7.0.3",
     "dotenv": "^16.0.1",
     "framer-motion": "^7.2.1",
