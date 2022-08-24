@@ -1,3 +1,3 @@
-import TextContent from './TextContent';
+import TextContent from "./TextContent";
 
 export default TextContent;

@@ -35,6 +35,7 @@ const IndexPage = ({ data: page }) => {
           color="black"
           maxW={800}
           mx={`auto`}
+          fontSize={["2xl", "3xl", "4xl"]}
           textAlign="center"
         >
           {beneficiariesTitle}

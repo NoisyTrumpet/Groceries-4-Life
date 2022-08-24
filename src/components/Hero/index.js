@@ -2,7 +2,7 @@ import { Button } from "@chakra-ui/react";
 import { Box, Grid, GridItem, Text, Flex } from "@chakra-ui/layout";
 import { GatsbyImage } from "gatsby-plugin-image";
 import * as React from "react";
-import { RichText } from '@graphcms/rich-text-react-renderer';
+import { RichText } from "@graphcms/rich-text-react-renderer";
 import TextContent from "../TextContent";
 
 const Hero = ({ data }) => {
@@ -19,7 +19,7 @@ const Hero = ({ data }) => {
     <Box id={id} bg="gradient">
       <Grid
         templateColumns={{ base: "100%", lg: "30% 70%" }}
-        templateRows={{ base: "auto auto", lg: "auto" }}
+        templateRows={{ base: "auto", lg: "auto" }}
         pos="relative"
         maxW={1500}
         mx={`auto`}
@@ -72,15 +72,10 @@ const Hero = ({ data }) => {
           )}
           <Grid
             templateColumns={{ base: "repeat(2, auto)", lg: "repeat(2, 1fr)" }}
-            templateRows={{
-              base: "repeat(2, minmax(150px, 180px))",
-              md: "repeat(2, minmax(150px, 230px))",
-              lg: "repeat(1, auto)",
-            }}
-            gridGap={`20px 0`}
+            gap={2}
             justifyContent={`space-evenly`}
-            px={4}
-          // pb={8}
+            px={[0, 4]}
+            // pb={8}
           >
             {/* Map thorugh prizes */}
             {prizes.map((prize, i) => (
@@ -117,11 +112,11 @@ const Hero = ({ data }) => {
                         width: { base: `auto`, lg: `100%` },
                         height: {
                           base:
-                            (prize.level === `Groceries` && `110px`) ||
-                            (prize.level === `Gas` && `90px`),
+                            (prize.level === `Groceries` && `140px`) ||
+                            (prize.level === `Gas` && `140px`),
                           md:
-                            (prize.level === `Groceries` && `180px`) ||
-                            (prize.level === `Gas` && `160px`),
+                            (prize.level === `Groceries` && `200px`) ||
+                            (prize.level === `Gas` && `200px`),
                           lg: `auto`,
                         },
                       },
@@ -187,7 +182,6 @@ const Hero = ({ data }) => {
           pb={4}
         >
           <Box
-
             zIndex={4}
             style={{ color: `white`, p: { zIndex: 999 } }}
             fontSize={{ base: "3xl", lg: "3xl" }}
@@ -205,9 +199,7 @@ const Hero = ({ data }) => {
               },
             }}
           >
-            <TextContent
-              content={subtitle.raw}
-            />
+            <TextContent content={subtitle.raw} />
           </Box>
           {ctaLink && ctaText && (
             <Button
@@ -219,7 +211,7 @@ const Hero = ({ data }) => {
               fontSize={{ base: "xl", lg: "3xl" }}
               px={10}
               position="relative"
-              bottom={{ base: "4", md: "0", "2xl": "-6" }}
+              bottom={{ base: "-4", md: "0", "2xl": "-6" }}
             >
               {ctaText}
             </Button>
