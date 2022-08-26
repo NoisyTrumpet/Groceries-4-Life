@@ -1,40 +1,44 @@
-import { Box, Grid, GridItem, Heading } from "@chakra-ui/layout";
+import {
+  Box,
+  Container,
+  Grid,
+  GridItem,
+  Heading,
+  Flex,
+} from "@chakra-ui/react";
+import SVG, { Props as SVGProps } from "react-inlinesvg";
 import { GatsbyImage } from "gatsby-plugin-image";
 import React, { forwardRef } from "react";
-import SVG, { Props as SVGProps } from "react-inlinesvg";
 
-interface MarketProps {
-  name: string;
-  beneficiaries: any;
-}
 
 const Logo = forwardRef<SVGElement, SVGProps>((props, ref) => (
   <SVG innerRef={ref} title={props?.title ?? ""} {...props} />
 ));
 
-function Market({ name, beneficiaries }: MarketProps) {
+function Benefits({ title, items }) {
   return (
-    <section>
-      <Box my={[4, 8, 12]}>
-        <Heading
-          as="h2"
-          color="black"
-          textAlign="center"
-          fontSize={["2xl", "3xl", "4xl"]}
-        >
-          {name}
-        </Heading>
+    <Box
+      textAlign="center"
+      pt={{ base: "20", lg: "6em", "2xl": "8em" }}
+      pb="10"
+    >
+      <Container>
+        {title && (
+          <Heading as="h2" color="black" maxW={800} mx="auto">
+            {title}
+          </Heading>
+        )}
         <Grid
           mt={8}
           templateColumns="50% 50%"
           gap={4}
         >
-          {beneficiaries &&
-            beneficiaries.map(({ name, id, companyLink, logo }) => {
+          {items &&
+            items.map(({ name, id, companyLink, logo }, index) => {
               const { mimeType, url, width, height, gatsbyImageData } = logo;
 
               const isSVG = mimeType === "image/svg+xml";
-              const isLink = companyLink !== null;
+              const isLink = companyLink !== "" || companyLink !== null;
 
               const itemStyles = {
                 display: "grid",
@@ -104,9 +108,9 @@ function Market({ name, beneficiaries }: MarketProps) {
               );
             })}
         </Grid>
-      </Box>
-    </section>
+      </Container>
+    </Box>
   );
 }
 
-export default Market;
+export default Benefits;

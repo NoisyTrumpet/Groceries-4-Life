@@ -27,9 +27,9 @@ function IndexPage({ data: page }) {
       {/* Hero */}
       <Hero data={hero} />
       {/* Benefits */}
-      {/* <Benefits title={beneficiariesTitle} items={beneficiaries} /> */}
+      <Benefits title={beneficiariesTitle} items={beneficiaries} />
       {/* Markets */}
-      <Container pt={{ base: "20", lg: "6em", "2xl": "8em" }} pb="10">
+      {/* <Container pt={{ base: "20", lg: "6em", "2xl": "8em" }} pb="10">
         <Heading
           as="h2"
           color="black"
@@ -46,7 +46,7 @@ function IndexPage({ data: page }) {
               <Market key={id} name={title} beneficiaries={beneficiaries} />
             ))}
         </Grid>
-      </Container>
+      </Container> */}
       {/* TextBlock */}
       <TextBlock
         title={textBlock.title}
@@ -82,6 +82,8 @@ export const query = graphql`
           prizes {
             level
             prizeImage {
+              url
+          mimeType
               gatsbyImageData(
                 placeholder: BLURRED
                 quality: 60
@@ -90,6 +92,8 @@ export const query = graphql`
             }
           }
           image {
+            url
+          mimeType
             gatsbyImageData(
               placeholder: BLURRED
               quality: 60
@@ -120,6 +124,8 @@ export const query = graphql`
       beneficiaries {
         logo {
           id
+          url
+          mimeType
           gatsbyImageData(
             placeholder: BLURRED
             quality: 60
