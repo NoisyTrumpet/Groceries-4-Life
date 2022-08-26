@@ -46,9 +46,11 @@ function Benefits({ title, items }) {
                 minHeight: "170px",
                 img: {
                   maxHeight: "200px",
+                  maxWidth: "400px",
                 },
                 svg: {
                   maxHeight: "200px",
+                  maxWidth: "400px",
                 },
               };
 
