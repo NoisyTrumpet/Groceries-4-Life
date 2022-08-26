@@ -39,6 +39,7 @@ function Benefits({ title, items }) {
 
               const isSVG = mimeType === "image/svg+xml";
               const isLink = companyLink !== "" || companyLink !== null;
+              const isTexasYes = name === "TEXAS YES";
 
               const itemStyles = {
                 display: "grid",
@@ -54,7 +55,7 @@ function Benefits({ title, items }) {
                 },
               };
 
-              if (isSVG && !isLink) {
+              if (!isTexasYes && isSVG && !isLink) {
                 return (
                   <GridItem key={id} sx={itemStyles}>
                     <Logo src={url} title={name} />
@@ -62,7 +63,7 @@ function Benefits({ title, items }) {
                 );
               }
 
-              if (isLink && isSVG) {
+              if (!isTexasYes &&isLink && isSVG) {
                 return (
                   <GridItem
                     key={id}
@@ -77,7 +78,7 @@ function Benefits({ title, items }) {
                 );
               }
 
-              if (isLink && !isSVG) {
+              if (!isTexasYes &&isLink && !isSVG) {
                 return (
                   <GridItem
                     key={id}
@@ -91,25 +92,56 @@ function Benefits({ title, items }) {
                       image={gatsbyImageData}
                       alt={name}
                       title={name}
-                      width={width}
-                      height={height}
                     />
                   </GridItem>
                 );
               }
 
-              return (
+              return !isTexasYes &&(
                 <GridItem key={id} sx={itemStyles}>
                   <GatsbyImage
                     image={gatsbyImageData}
                     alt={name}
-                    width={width}
-                    height={height}
                   />
                 </GridItem>
               );
             })}
         </Grid>
+        <Box
+        display={`grid`}
+        mt={8}
+        placeItems="center"
+          sx={{
+            svg: {
+              maxHeight: "200px",
+              maxWidth: "600px",
+            }
+          }}
+        >
+          {items &&
+            items.map(({ name, id, companyLink, logo }, index) => {
+              const { url } = logo;
+              const isTexasYes = name === "TEXAS YES";
+
+              const itemStyles = {
+                display: "grid",
+                placeItems: "center",
+                minHeight: "170px",
+                img: {
+                  maxHeight: "200px",
+                  maxWidth: "400px",
+                },
+                svg: {
+                  maxHeight: "200px",
+                  maxWidth: "400px",
+                },
+              };
+
+              return isTexasYes &&(
+                <Logo src={url} title={name} />
+              );
+            })}
+        </Box>
       </Container>
     </Box>
   );
