@@ -1,10 +1,16 @@
-import * as React from "react";
+import React, { forwardRef } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 // import PropTypes from "prop-types";
 import { Box, Button, Grid, GridItem, Heading, Text } from "@chakra-ui/react";
-import { GatsbyImage } from "gatsby-plugin-image";
+// import SVG from "react-inlinesvg";
 
-const Header = () => {
+// const Logo = forwardRef((props, ref) => (
+//   <SVG innerRef={ref} title={props?.title ?? ``} {...props} />
+// ));
+
+import Logo from "SVG/index";
+
+function Header() {
   const { graphCmsHeader: header } = useStaticQuery(headerQuery);
   const {
     // id,
@@ -16,34 +22,33 @@ const Header = () => {
     logo,
     dateRange,
   } = header;
-  //   console.log(id);
-  //   console.log(buttonText);
-  //   console.log(buttonLink);
-  //   console.log(title);
-  //   console.log(subtitle);
-  //   console.log(logo);
-
-  const image = logo.gatsbyImageData;
 
   return (
     <Box bg="lightBG">
-      <Grid templateColumns={["100%", "33% 33% 33%"]} pt={8} pb={4}>
-        <GridItem display={{ base: `none`, md: `block` }}></GridItem>
-        <GridItem align={`center`} pb={{ base: 8, md: 0 }}>
-          <Box as="a" href="/">
-            {image && title && (
-              <GatsbyImage
-                image={image}
-                alt={title}
-                style={{ width: `65%`, height: `auto` }}
-              />
-            )}
+      <Grid templateColumns={["100%"]} pt={[2, 4]} pb={[2, 4]}>
+        <GridItem display={{ base: "none", md: "block" }} />
+        <GridItem align="center" pb={{ base: 4, md: 0 }}>
+          <Box
+            as="a"
+            href="/"
+            display="grid"
+            width={400}
+            maxWidth="100%"
+            padding={[4, 0]}
+            sx={{
+              svg: {
+                maxWidth: "100%",
+                height: "auto",
+              },
+            }}
+          >
+            <Logo title="Gas & Groceries for Life | Presented by Thomas J. Henry" />
           </Box>
-          <Text mt={4} fontSize={24} fontWeight={800} color={`darkBG`}>
+          <Text mt={4} fontSize={[20, 24]} fontWeight={800} color="darkBG">
             {dateRange}
           </Text>
         </GridItem>
-        {/* <GridItem d="grid" placeItems="center">
+        <GridItem d="grid" placeItems="center" width="100%">
           {buttonText && buttonLink && (
             <Button
               as="a"
@@ -52,11 +57,16 @@ const Header = () => {
               textTransform="uppercase"
               px={10}
               fontSize={{ base: "xl", lg: "3xl" }}
+              mx="auto"
+              mt={[0, 4]}
+              mb={2}
+              display="flex"
+              maxWidth="fit-content"
             >
               {buttonText}
             </Button>
           )}
-        </GridItem> */}
+        </GridItem>
       </Grid>
       <Box
         textAlign="center"
@@ -68,26 +78,17 @@ const Header = () => {
         fontWeight={800}
       >
         {title && (
-          <Heading as="h1" fontSize={{ base: `xl`, md: `3xl` }}>
+          <Heading as="h1" fontSize={{ base: "xl", md: "3xl" }}>
             {title}
           </Heading>
         )}
         {subtitle && (
-          <Text fontSize={{ base: `xl`, md: `3xl` }}>{subtitle}</Text>
+          <Text fontSize={{ base: "xl", md: "3xl" }}>{subtitle}</Text>
         )}
-        <Text fontSize={{ base: `xl`, md: `3xl` }}>
-          Grand Prize: Diane Baird-Barger - Schertz
-          <br />
-          2nd Place: Agnes Pawelek - Karnes City
-          <br />
-          3rd Place: Rudy Hernandez - New Braunfels
-          <br />
-          4th Place: Kristal Eaker - Helotes
-        </Text>
       </Box>
     </Box>
   );
-};
+}
 
 export default Header;
 
@@ -101,7 +102,7 @@ const headerQuery = graphql`
       buttonLink
       buttonText
       logo {
-        gatsbyImageData(placeholder: BLURRED, quality: 60, layout: CONSTRAINED)
+        url
       }
     }
   }

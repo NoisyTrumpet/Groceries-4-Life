@@ -13,7 +13,8 @@ const colors = {
   textColor: "#D39D49",
   green: "#2b666b",
   // gradient:
-  gradient: `radial-gradient(circle, rgba(43,102,107,1) 0%,rgba(43,102,107,1) 60%, rgba(26,32,44,1) 100%)`,
+  gradient:
+    "radial-gradient(circle, rgba(43,102,107,1) 0%,rgba(43,102,107,1) 60%, rgba(26,32,44,1) 100%)",
   darkGray: "#5B6770",
   gradientTop: "#FFFFFF",
   gradientBottom: "#FFFFFF",

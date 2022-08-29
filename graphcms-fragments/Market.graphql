@@ -1,12 +1,11 @@
-fragment Beneficiary on Beneficiary {
+fragment Market on Market {
   stage
-  remoteId: id
-  createdAt
-  updatedAt
   publishedAt
-  name
-  companyLink
-  createdBy {
+  updatedAt
+  createdAt
+  remoteId: id
+  title
+  publishedBy {
     ... on User {
       remoteTypeName: __typename
       remoteId: id
@@ -20,23 +19,15 @@ fragment Beneficiary on Beneficiary {
       stage
     }
   }
-  publishedBy {
+  createdBy {
     ... on User {
       remoteTypeName: __typename
       remoteId: id
       stage
     }
   }
-  logo {
-    ... on Asset {
-      remoteTypeName: __typename
-      remoteId: id
-      locale
-      stage
-    }
-  }
-  market {
-    ... on Market {
+  beneficiaries {
+    ... on Beneficiary {
       remoteTypeName: __typename
       remoteId: id
       stage

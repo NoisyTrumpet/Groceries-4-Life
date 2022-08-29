@@ -1,11 +1,11 @@
 import * as React from "react";
 import { chakra, useColorModeValue } from "@chakra-ui/react";
 
-const defaultId = `skip-to-content`;
+const defaultId = "skip-to-content";
 
-const SkipNavLink = ({ children = `Skip to content`, contentId, ...props }) => {
+function SkipNavLink({ children = "Skip to content", contentId, ...props }) {
   const id = contentId || defaultId;
-  const background = useColorModeValue(`bg`, `dark.bg`);
+  const background = useColorModeValue("bg", "dark.bg");
 
   return (
     <chakra.a
@@ -18,14 +18,14 @@ const SkipNavLink = ({ children = `Skip to content`, contentId, ...props }) => {
       overflow="hidden"
       position="absolute"
       _focus={{
-        padding: `1rem`,
-        position: `fixed`,
-        top: `10px`,
-        left: `10px`,
+        padding: "1rem",
+        position: "fixed",
+        top: "10px",
+        left: "10px",
         background,
-        zIndex: `skipLink`,
-        width: `auto`,
-        height: `auto`,
+        zIndex: "skipLink",
+        width: "auto",
+        height: "auto",
       }}
       href={`#${id}`}
       data-skip-to-content
@@ -33,12 +33,12 @@ const SkipNavLink = ({ children = `Skip to content`, contentId, ...props }) => {
       {children}
     </chakra.a>
   );
-};
+}
 
 /**
  * Wrap the main content of a page with this, thus also the <main> tag
  */
-const SkipNavContent = ({ children, id: idProp, ...props }) => {
+function SkipNavContent({ children, id: idProp, ...props }) {
   const id = idProp || defaultId;
 
   return (
@@ -46,6 +46,6 @@ const SkipNavContent = ({ children, id: idProp, ...props }) => {
       {children}
     </main>
   );
-};
+}
 
 export { SkipNavLink, SkipNavContent };

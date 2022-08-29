@@ -63,6 +63,11 @@ fragment ScheduledOperation on ScheduledOperation {
       remoteId: id
       stage
     }
+    ... on Market {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
     ... on Page {
       remoteTypeName: __typename
       remoteId: id

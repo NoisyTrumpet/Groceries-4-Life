@@ -19,11 +19,11 @@ import colors from "./foundations/colors";
 
 // Custom breakpoints
 const breakpoints = createBreakpoints({
-  sm: `640px`,
-  md: `768px`,
-  lg: `1024px`,
-  xl: `1280px`,
-  "2xl": `1536px`,
+  sm: "640px",
+  md: "768px",
+  lg: "1024px",
+  xl: "1280px",
+  "2xl": "1536px",
 });
 
 const theme = extendTheme({
@@ -41,8 +41,8 @@ const theme = extendTheme({
     useSystemColorMode: false,
   },
   fonts: {
-    heading: `"Montserrat"`,
-    body: `"Montserrat"`,
+    heading: '"Montserrat"',
+    body: '"Montserrat"',
   },
 });
 

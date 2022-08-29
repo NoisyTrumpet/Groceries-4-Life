@@ -2,14 +2,14 @@ import React from "react";
 // import Fonts from "../../@chakra-ui/gatsby-plugin/theme/foundations/fonts";
 import theme from "../../@chakra-ui/gatsby-plugin/theme";
 // Fonts
-import montserrat300 from '@fontsource/montserrat/files/montserrat-latin-300-normal.woff2'
-import montserrat500 from '@fontsource/montserrat/files/montserrat-latin-500-normal.woff2'
-import montserrat700 from '@fontsource/montserrat/files/montserrat-latin-700-normal.woff2'
-import montserrat900 from '@fontsource/montserrat/files/montserrat-latin-900-normal.woff2'
-import '@fontsource/montserrat/latin-300.css'
-import '@fontsource/montserrat/latin-500.css'
-import '@fontsource/montserrat/latin-700.css'
-import '@fontsource/montserrat/latin-900.css'
+import montserrat300 from "@fontsource/montserrat/files/montserrat-latin-300-normal.woff2";
+import montserrat500 from "@fontsource/montserrat/files/montserrat-latin-500-normal.woff2";
+import montserrat700 from "@fontsource/montserrat/files/montserrat-latin-700-normal.woff2";
+import montserrat900 from "@fontsource/montserrat/files/montserrat-latin-900-normal.woff2";
+import "@fontsource/montserrat/latin-300.css";
+import "@fontsource/montserrat/latin-500.css";
+import "@fontsource/montserrat/latin-700.css";
+import "@fontsource/montserrat/latin-900.css";
 import { ChakraProvider } from "@chakra-ui/react";
 import Header from "Components/Header";
 import Footer from "Components/Footer";
@@ -18,7 +18,7 @@ import { SkipNavContent, SkipNavLink } from "Components/SkipNav/index";
 import "Styles/main.scss";
 import { Helmet } from "react-helmet";
 
-const Layout = ({ children }) => {
+function Layout({ children }) {
   // const { pathname } = useLocation();
   return (
     <ChakraProvider theme={theme}>
@@ -60,6 +60,6 @@ const Layout = ({ children }) => {
       <Footer />
     </ChakraProvider>
   );
-};
+}
 
 export default Layout;

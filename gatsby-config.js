@@ -16,6 +16,8 @@ module.exports = {
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
+    // Netlify:
+    `gatsby-plugin-netlify`,
     // GraphCMS Endpoint:
     {
       resolve: "gatsby-source-graphcms",
