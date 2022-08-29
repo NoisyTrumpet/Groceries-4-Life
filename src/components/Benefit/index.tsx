@@ -44,12 +44,13 @@ function Benefits({ title, items }) {
               const itemStyles = {
                 display: "grid",
                 placeItems: "center",
-                minHeight: "170px",
                 img: {
-                  maxHeight: "200px",
-                  maxWidth: "400px",
+                  maxWidth: "300px",
+                  height: `auto`,
+                  margin: `auto`
                 },
                 svg: {
+                  width: "100%",
                   maxHeight: "200px",
                   maxWidth: "400px",
                 },

@@ -83,7 +83,7 @@ export const query = graphql`
             level
             prizeImage {
               url
-          mimeType
+            mimeType
               gatsbyImageData(
                 placeholder: BLURRED
                 quality: 60
