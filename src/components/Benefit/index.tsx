@@ -139,7 +139,7 @@ function Benefits({ title, items }) {
               };
 
               return isTexasYes &&(
-                <Logo src={url} title={name} />
+                <Logo key={id} src={url} title={name} />
               );
             })}
         </Box>

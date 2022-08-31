@@ -8,7 +8,6 @@ interface TextContentProps {
 }
 
 function TextContent({ content }: TextContentProps) {
-  console.log(content);
   return (
     <RichText
       content={content}

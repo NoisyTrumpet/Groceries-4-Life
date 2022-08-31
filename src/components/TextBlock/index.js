@@ -12,7 +12,6 @@ function TextBlock({ title, content, image }) {
 
   const isSVG = imageType === "image/svg+xml";
 
-  console.log(image);
   return (
     <Box bg="primary" color="white" py="6">
       {title && (

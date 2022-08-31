@@ -16,6 +16,7 @@
     "clean": "gatsby clean && rm -r graphcms-fragments"
   },
   "dependencies": {
+    "@builder.io/partytown": "^0.7.0",
     "@chakra-ui/gatsby-plugin": "^3.0.5",
     "@chakra-ui/react": "^2.2.9",
     "@emotion/react": "^11.10.0",
@@ -37,6 +38,7 @@
     "gatsby-source-filesystem": "^4.21.1",
     "gatsby-source-graphcms": "^2.8.0",
     "gatsby-transformer-sharp": "^4.21.0",
+    "path": "^0.12.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
