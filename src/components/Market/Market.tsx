@@ -24,11 +24,7 @@ function Market({ name, beneficiaries }: MarketProps) {
         >
           {name}
         </Heading>
-        <Grid
-          mt={8}
-          templateColumns="50% 50%"
-          gap={4}
-        >
+        <Grid mt={8} templateColumns="50% 50%" gap={4}>
           {beneficiaries &&
             beneficiaries.map(({ name, id, companyLink, logo }) => {
               const { mimeType, url, width, height, gatsbyImageData } = logo;

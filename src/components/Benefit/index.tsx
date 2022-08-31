@@ -10,7 +10,6 @@ import SVG, { Props as SVGProps } from "react-inlinesvg";
 import { GatsbyImage } from "gatsby-plugin-image";
 import React, { forwardRef } from "react";
 
-
 const Logo = forwardRef<SVGElement, SVGProps>((props, ref) => (
   <SVG innerRef={ref} title={props?.title ?? ""} {...props} />
 ));
@@ -28,11 +27,7 @@ function Benefits({ title, items }) {
             {title}
           </Heading>
         )}
-        <Grid
-          mt={8}
-          templateColumns="50% 50%"
-          gap={4}
-        >
+        <Grid mt={8} templateColumns="50% 50%" gap={4}>
           {items &&
             items.map(({ name, id, companyLink, logo }, index) => {
               const { mimeType, url, width, height, gatsbyImageData } = logo;
@@ -47,7 +42,7 @@ function Benefits({ title, items }) {
                 img: {
                   maxWidth: "300px",
                   height: `auto`,
-                  margin: `auto`
+                  margin: `auto`,
                 },
                 svg: {
                   width: "100%",
@@ -64,7 +59,7 @@ function Benefits({ title, items }) {
                 );
               }
 
-              if (!isTexasYes &&isLink && isSVG) {
+              if (!isTexasYes && isLink && isSVG) {
                 return (
                   <GridItem
                     key={id}
@@ -79,7 +74,7 @@ function Benefits({ title, items }) {
                 );
               }
 
-              if (!isTexasYes &&isLink && !isSVG) {
+              if (!isTexasYes && isLink && !isSVG) {
                 return (
                   <GridItem
                     key={id}
@@ -98,25 +93,24 @@ function Benefits({ title, items }) {
                 );
               }
 
-              return !isTexasYes &&(
-                <GridItem key={id} sx={itemStyles}>
-                  <GatsbyImage
-                    image={gatsbyImageData}
-                    alt={name}
-                  />
-                </GridItem>
+              return (
+                !isTexasYes && (
+                  <GridItem key={id} sx={itemStyles}>
+                    <GatsbyImage image={gatsbyImageData} alt={name} />
+                  </GridItem>
+                )
               );
             })}
         </Grid>
         <Box
-        display={`grid`}
-        mt={8}
-        placeItems="center"
+          display={`grid`}
+          mt={8}
+          placeItems="center"
           sx={{
             svg: {
               maxHeight: "200px",
               maxWidth: "600px",
-            }
+            },
           }}
         >
           {items &&
@@ -138,9 +132,7 @@ function Benefits({ title, items }) {
                 },
               };
 
-              return isTexasYes &&(
-                <Logo key={id} src={url} title={name} />
-              );
+              return isTexasYes && <Logo key={id} src={url} title={name} />;
             })}
         </Box>
       </Container>

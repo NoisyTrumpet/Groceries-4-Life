@@ -83,7 +83,7 @@ export const query = graphql`
             level
             prizeImage {
               url
-            mimeType
+              mimeType
               gatsbyImageData(
                 placeholder: BLURRED
                 quality: 60
@@ -93,7 +93,7 @@ export const query = graphql`
           }
           image {
             url
-          mimeType
+            mimeType
             gatsbyImageData(
               placeholder: BLURRED
               quality: 60
