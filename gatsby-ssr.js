@@ -5,7 +5,8 @@ const resolveUrl = url => {
     if (
         url.hostname === 'www.google-analytics.com' ||
         url.hostname === 'connect.facebook.net' ||
-        url.hostname === 'analytics.tiktok.com'
+        url.hostname === 'analytics.tiktok.com' ||
+        url.hostname === 'www.googletagmanager.com'
     ) {
         var proxyUrl = new URL(`https://coop-atm.mygenfcu.workers.dev/?${url.href}`)
         // proxyUrl.searchParams.append('', )
