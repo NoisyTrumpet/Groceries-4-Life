@@ -34,7 +34,7 @@ function Benefits({ title, items }) {
 
               const isSVG = mimeType === "image/svg+xml";
               const isLink = companyLink !== "" || companyLink !== null;
-              const isTexasYes = name === "TEXAS YES";
+              // const isTexasYes = name === "TEXAS YES";
 
               const itemStyles = {
                 display: "grid",
@@ -50,8 +50,8 @@ function Benefits({ title, items }) {
                   maxWidth: "400px",
                 },
               };
-
-              if (!isTexasYes && isSVG && !isLink) {
+              // !isTexasYes &&
+              if (isSVG && !isLink) {
                 return (
                   <GridItem key={id} sx={itemStyles}>
                     <Logo src={url} title={name} />
@@ -59,7 +59,7 @@ function Benefits({ title, items }) {
                 );
               }
 
-              if (!isTexasYes && isLink && isSVG) {
+              if (isLink && isSVG) {
                 return (
                   <GridItem
                     key={id}
@@ -74,7 +74,7 @@ function Benefits({ title, items }) {
                 );
               }
 
-              if (!isTexasYes && isLink && !isSVG) {
+              if (isLink && !isSVG) {
                 return (
                   <GridItem
                     key={id}
@@ -94,11 +94,9 @@ function Benefits({ title, items }) {
               }
 
               return (
-                !isTexasYes && (
-                  <GridItem key={id} sx={itemStyles}>
-                    <GatsbyImage image={gatsbyImageData} alt={name} />
-                  </GridItem>
-                )
+                <GridItem key={id} sx={itemStyles}>
+                  <GatsbyImage image={gatsbyImageData} alt={name} />
+                </GridItem>
               );
             })}
         </Grid>
@@ -113,7 +111,7 @@ function Benefits({ title, items }) {
             },
           }}
         >
-          {items &&
+          {/* {items &&
             items.map(({ name, id, companyLink, logo }, index) => {
               const { url } = logo;
               const isTexasYes = name === "TEXAS YES";
@@ -133,7 +131,7 @@ function Benefits({ title, items }) {
               };
 
               return isTexasYes && <Logo key={id} src={url} title={name} />;
-            })}
+            })} */}
         </Box>
       </Container>
     </Box>

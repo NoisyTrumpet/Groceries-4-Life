@@ -26,7 +26,7 @@ export const onRenderBody = ({ setHeadComponents, setPreBodyComponents }) => {
     <Partytown
       key="partytown"
       debug={false}
-      forward={['dataLayer.push', 'fbq', 'ttq.load', 'ttq.page', 'ttq.track']}
+      forward={["dataLayer.push", "fbq", "ttq.load", "ttq.page", "ttq.track"]}
       resolveUrl={resolveUrl}
     />,
     <script
@@ -49,5 +49,5 @@ export const onRenderBody = ({ setHeadComponents, setPreBodyComponents }) => {
           __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=${process.env.GATSBY_GOOGLE_TAG_MANAGER_ID}" height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
         }}
       />,
-    ])
+    ]);
 };
