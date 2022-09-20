@@ -7,7 +7,8 @@ const resolveUrl = (url) => {
     url.hostname === "connect.facebook.net" ||
     url.hostname === "analytics.tiktok.com" ||
     url.hostname === "www.googletagmanager.com" ||
-    url.hostname === "www.googleadservices.com"
+    url.hostname === "www.googleadservices.com" ||
+    url.hostname === "googleads.g.doubleclick.net"
   ) {
     var proxyUrl = new URL(
       `https://coop-atm.mygenfcu.workers.dev/?${url.href}`
