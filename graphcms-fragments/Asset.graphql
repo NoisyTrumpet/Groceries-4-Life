@@ -1,0 +1,85 @@
+fragment Asset on Asset {
+  stage
+  locale
+  remoteId: id
+  createdAt(variation: COMBINED)
+  updatedAt(variation: COMBINED)
+  publishedAt(variation: COMBINED)
+  handle
+  fileName
+  height
+  width
+  size
+  mimeType
+  createdBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  updatedBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  publishedBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  heroImage {
+    ... on Hero {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  logoBeneficiary {
+    ... on Beneficiary {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  seoImage {
+    ... on Seo {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  logoHeader {
+    ... on Header {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  prizeImagePrize {
+    ... on Prize {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  imageTextBlock {
+    ... on TextBlock {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  scheduledIn {
+    ... on ScheduledOperation {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  url
+}
