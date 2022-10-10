@@ -48,7 +48,7 @@ function Header() {
             {dateRange}
           </Text>
         </GridItem>
-        <GridItem d="grid" placeItems="center" width="100%">
+        {/* <GridItem d="grid" placeItems="center" width="100%">
           {buttonText && buttonLink && (
             <Button
               as="a"
@@ -66,7 +66,7 @@ function Header() {
               {buttonText}
             </Button>
           )}
-        </GridItem>
+        </GridItem> */}
       </Grid>
       <Box
         textAlign="center"

@@ -80,7 +80,7 @@ function Hero({ data }) {
             gap={2}
             justifyContent="space-evenly"
             px={[0, 4]}
-            // pb={8}
+          // pb={8}
           >
             {/* Map thorugh prizes */}
             {prizes.map((prize, i) => (
@@ -181,7 +181,7 @@ function Hero({ data }) {
         }}
       >
         <Box
-          height={{ base: "100%", xl: "120px", "2xl": "150px" }}
+          height={{ base: "100%" }}
           max-height={{ base: "275px", xl: "revert" }}
           pt={3}
           pb={4}
@@ -206,7 +206,7 @@ function Hero({ data }) {
           >
             <TextContent content={subtitle.raw} />
           </Box>
-          {ctaLink && ctaText && (
+          {/* {ctaLink && ctaText && (
             <Button
               as="a"
               href={ctaLink}
@@ -220,7 +220,7 @@ function Hero({ data }) {
             >
               {ctaText}
             </Button>
-          )}
+          )} */}
         </Box>
       </Box>
     </Box>
