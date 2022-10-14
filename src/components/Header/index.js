@@ -78,13 +78,16 @@ function Header() {
         fontWeight={800}
       >
         {title && (
-          <Heading as="h1" fontSize={{ base: "xl", md: "3xl" }}>
+          <Heading as="h1" fontSize={{ base: "xl", md: "3xl" }} mb={4}>
             {title}
           </Heading>
         )}
-        {subtitle && (
+        <Heading textTransform="uppercase" as="h2">
+          Grand Prize Winners
+        </Heading>
+        {/* {subtitle && (
           <Text fontSize={{ base: "xl", md: "3xl" }}>{subtitle}</Text>
-        )}
+        )} */}
       </Box>
     </Box>
   );

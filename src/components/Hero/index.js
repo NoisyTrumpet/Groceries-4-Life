@@ -80,7 +80,7 @@ function Hero({ data }) {
             gap={2}
             justifyContent="space-evenly"
             px={[0, 4]}
-          // pb={8}
+            // pb={8}
           >
             {/* Map thorugh prizes */}
             {prizes.map((prize, i) => (

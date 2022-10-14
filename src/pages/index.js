@@ -9,6 +9,7 @@ import TextBlock from "Components/TextBlock";
 import Seo from "Components/Seo";
 import { Container, Grid, Heading } from "@chakra-ui/layout";
 import Market from "../components/Market";
+import Winners from "../components/Winners";
 
 function IndexPage({ data: page }) {
   const {
@@ -25,7 +26,8 @@ function IndexPage({ data: page }) {
     <Layout>
       <Seo title={seoTitle} description={seoDescription} />
       {/* Hero */}
-      <Hero data={hero} />
+      {/* <Hero data={hero} /> */}
+      <Winners />
       {/* Benefits */}
       <Benefits title={beneficiariesTitle} items={beneficiaries} />
       {/* Markets */}
